@@ -1,0 +1,32 @@
+/* Default Button Styles */
+.btn-addcourses {
+    background-color: #1f3a68; /* Dark blue background color */
+    color: #ffffffea; /* Grey text color */
+    border: none; /* No border */
+    padding: 10px 50px; /* Adjust padding for the button size */
+    border-radius: 1px; /* Rounded corners */
+    cursor: pointer; /* Add pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn-addcourses:hover {
+    background-color: #3c6cb7; /* Darker blue on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+
+/* Button Focus Effect */
+.btn-addcourses:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0 5px #0078d4; /* Add a subtle box shadow on focus */
+}
+
+/* Button Active Effect */
+.btn-addcourses:active {
+    background-color: #005a9e; /* Active background color (darker blue) */
+    color: #ffffff; /* Active text color (white) */
+}
+
+#courseNameInput, #studentsEnrolledInput {
+    width: 45%; /* Adjust the percentage as needed */
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cettle - Courses</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="landingPage.html">
+    <link rel="stylesheet" href="sidenavbar.css">
+    <link rel="stylesheet" href="landingstyles.css">
+    <link rel="stylesheet" href="courses.css">
+</head>
+
+<body>
+
+    <!-- ================================================== -->
+
+    <!-- Navbar with Sidebar Toggle -->
+    <nav id="nav_main_features" class="navbar navbar-expand-lg navbar-light bg-light">
+        <!--nav bar to nav to main features-->
+        <!--Sidebar TButton FIRST-->
+
+        <button id="sidebar-toggler" class="navbar-toggler" type="button" data-target="#sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- then CETTLE -->
+        <!-- Courses -->
+        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">Courses</a>
+
+        <!-- CETTLE-->
+        <a class="navbar-brand ml-auto" href="landingpage.html" style="font-size: 22px;">CETTLE</a>
+
+
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar"><!--sidebar-id is sidebar-->
+        <span>
+            <ul>
+                <li><a href="TimeTable.html">TimeTable</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+            </ul>
+            <span>
+    </div>
+
+    <!-- ================================================== -->
+
+    <!-- Button for Input fields -->
+    <button class="btn btn-addcourses" type="button" data-toggle="collapse" data-target="#inputFields"
+        aria-expanded="false" aria-controls="inputFields">
+        Add Course
+    </button>
+
+    <!-- The Input fields -->
+    <div class="collapse" id="inputFields">
+        <div class="form-group">
+            <label for="courseName">Course Name:</label>
+            <input type="text" class="form-control" id="courseNameInput">
+        </div>
+        <div class="form-group">
+            <label for="studentsEnrolled">Students Enrolled:</label>
+            <input type="text" class="form-control" id="studentsEnrolledInput">
+        </div>
+        <!-- Button puts Value to Table -->
+        <button class="btn btn-success" type="button" id="addButton">Add</button>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Bootstrap INIT JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script src="landingscript.js"></script>
+
+</body>
+
+</html>
