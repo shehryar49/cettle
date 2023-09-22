@@ -1,0 +1,51 @@
+	BS(DS)-2021:
+					
+CS2006	Operating Systems				BDS-5A	Ms. Rubab Anum		3	BS (DS)	CS (Core)
+CS2006	Operating Systems				BDS-5B	Ms. Namra Absar		3	BS (DS)	CS (Core)
+CS2006	Operating Systems				BDS-5C	Mr. Mubasher Hussain	3	BS (DS)	CS (Core)
+
+CS2009	Design and Analysis of Algorithms		BDS-5A	Dr. Maryam Bashir	3	BS (DS)	CS (Core)
+CS2009	Design and Analysis of Algorithms		BDS-5B	Dr. Maryam Bashir	3	BS (DS)	CS (Core)
+CS2009	Design and Analysis of Algorithms		BDS-5C	Mr. Usama Hassan	3	BS (DS)	CS (Core)
+
+DS3001	Data Analysis & Visualization 			BDS-5A	Umme Ammara		3	BS (DS)	DS (Core)
+DS3001	Data Analysis & Visualization 			BDS-5B	Ms Bushra Rashid	3	BS (DS)	DS (Core)
+DS3001	Data Analysis & Visualization 			BDS-5C	Ms Bushra Rashid	3	BS (DS)	DS (Core)
+DS3001	Data Analysis & Visualization 			BDS-5D	Umme Ammara		3	BS (DS)	DS (Core)
+
+DS3003	Data Warehousing & Business Intelligence	BDS-5A	Mr. M. Ishaq Raza (VF)	3	BS (DS)	DS (Core)
+DS3003	Data Warehousing & Business Intelligence	BDS-5B	Ms. Asbah Khalid	3	BS (DS)	DS (Core)
+DS3003	Data Warehousing & Business Intelligence	BDS-5C	Ms. Asbah Khalid	3	BS (DS)	DS (Core)
+
+SS2007	Technical and Business Writing			BDS-5A	Ms. Nayyab Mufti (VF)	3	BS (DS)	HSS (Core)
+SS2007	Technical and Business Writing			BDS-5B	Ms. Naima Chauhdary (VF)3	BS (DS)	HSS (Core)
+SS2007	Technical and Business Writing			BDS-5C	Ms. Nayyab Mufti (VF)	3	BS (DS)	HSS (Core)
+SS2007	Technical and Business Writing			BDS-5D	Ms.Uzma Safdar (VF)	3	BS (DS)	HSS (Core)
+
+DL3001	Data Analysis & Visualization Lab		BDS-5A1				1	BS (DS)	DS (Core)
+DL3001	Data Analysis & Visualization Lab		BDS-5A2				1	BS (DS)	DS (Core)
+DL3001	Data Analysis & Visualization Lab		BDS-5B1				1	BS (DS)	DS (Core)
+DL3001	Data Analysis & Visualization Lab		BDS-5B2				1	BS (DS)	DS (Core)
+DL3001	Data Analysis & Visualization Lab		BDS-5C1				1	BS (DS)	DS (Core)
+DL3001	Data Analysis & Visualization Lab		BDS-5C2				1	BS (DS)	DS (Core)
+DL3001	Data Analysis & Visualization Lab		BDS-5D1				1	BS (DS)	DS (Core)
+
+	Repeat courses:
+					
+CS2005	Database Systems			BDS-5A	Mr. Muhammad Naveed	3	BS (DS)	CS (Core)
+
+CS2004	Fundamentals of Software Engineering 	BDS-5A	Mr. Zeeshan Nazar	3	BS (DS)	CS (Core)
+
+DS2004	Fundamentals of Big Data Analytics	BDS-5A	Ms. Mamoona Akbar (JL)	3	BS (DS)	DS (Core)
+
+DL2004	Fundamentals of Big Data Analytics Lab	BDS-5A1				1	BS (DS)	DS (Core)
+DL2004	Fundamentals of Big Data Analytics Lab	BDS-5A2				1	BS (DS)	DS (Core)
+
+CL2005	Database Systems Lab			BDS-5A1				1	BS (DS)	CS (Core)
+CL2005	Database Systems Lab			BDS-5A2				1	BS (DS)	CS (Core)
+CS2006	Operating Systems Lab			BDS-5A1				1	BS (DS)	CS (Core)
+CS2006	Operating Systems Lab			BDS-5A2				1	BS (DS)	CS (Core)
+CS2006	Operating Systems Lab			BDS-5B1				1	BS (DS)	CS (Core)
+CS2006	Operating Systems Lab			BDS-5B2				1	BS (DS)	CS (Core)
+CS2006	Operating Systems Lab			BDS-5C1				1	BS (DS)	CS (Core)
+CS2006	Operating Systems Lab	BDS-5C2		1	BS (DS)	CS (Core)
