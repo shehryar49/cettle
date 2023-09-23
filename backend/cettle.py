@@ -18,5 +18,7 @@ def listCourses():
 @app.route("/venues")
 def listVenues():
     return jsonify(venues),200
+
+
 ##
 app.run()
