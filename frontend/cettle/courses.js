@@ -1,4 +1,4 @@
-// custom.js
+
 
 document.getElementById('courseCodeInput')
 .addEventListener('paste', function(e)

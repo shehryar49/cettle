@@ -47,29 +47,93 @@
     </div>
 
     <!-- ================================================== -->
-<!--************-->    
-        <!-- Button for ADD fields -->
-        <button class="btn btn-addcourses" type="button" data-toggle="collapse" data-target="#inputFields"
-            aria-expanded="false" aria-controls="inputFields">
-            Add Instructor
-        </button>
-        
-        <!-- The Input fields -->
-        <div class="collapse collapse-sm" id="inputFields">
-            <div class="form-group">
-                <label for="courseName">Instructor Name<span class="required">*</span></label>
-                <input type="text" class="form-control" id="teacherNameInput" name="teacherNameInput" required>
+<!-- teachers.html -->
 
-            </div>
-            <div class="form-group">
-                <label for="studentsEnrolled">Course:</label>
-                <input type="text" class="form-control" id="courseEnrolledInput">
-            </div>
-            <!-- Button puts Value to Table -->
-            <button class="btn btn-success" type="button" id="addButton">Add</button>
+<div class="btn-group" role="group" aria-label="Input Add and Update Fields">
+    <!-- Button for ADD fields -->
+    <button class="btn btn-addteacher" id="teacherAddButton" type="button" data-toggle="collapse"
+        data-target="#teacherInputFields" aria-expanded="false" aria-controls="teacherInputFields">
+        Add Instructor
+    </button>
+
+    <!-- Button for UPDATE -->
+    <button class="btn btn-addteacher" id="teacherUpdateButton" type="button" data-toggle="collapse"
+        data-target="#teacherUpdateFields" aria-expanded="false" aria-controls="teacherUpdateFields">
+        Update Instructor
+    </button>
+
+    <!-- Button for Delete -->
+    <button class="btn btn-addteacher" id="teacherDeleteButton" type="button" data-toggle="collapse"
+        data-target="#teacherDeleteFields" aria-expanded="false" aria-controls="teacherDeleteFields">
+        Delete Instructor
+    </button>
+</div>
+
+<!-- TForm for Add Teacher -->
+<div class="collapse collapse-sm" id="teacherInputFields">
+    <label for="teacherInfoInput">Instructor Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="teacherCodeInput" name="teacherCodeInput"
+                placeholder="Code (e.g., TCH001)">
         </div>
-<!--************-->
+        <div class="form-group col">
+            <input type="text" class="form-control" id="teacherNameInput" name="teacherNameInput"
+                placeholder="Instructor's Name*" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <input type="text" class="form-control" id="teacherPreferredTimeInput" name="teacherPreferredTimeInput"
+                placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
+        </div>
+    </div>
 
+    <!-- Button to Add Teacher -->
+    <button class="btn btn-success" type="button" id="addTeacherButton">Add</button>
+</div>
+
+<!-- The Form Fields to UPDATE Teacher -->
+<div class="collapse collapse-sm" id="teacherUpdateFields">
+    <label for="teacherInfoUpdate">Teacher Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="teacherCodeUpdate" name="teacherCodeUpdate"
+                placeholder="Code (e.g., TCH001)">
+        </div>
+        <div class="form-group col">
+            <input type="text" class="form-control" id="teacherNameUpdate" name="teacherNameUpdate"
+                placeholder="Instructor's Name*" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <input type="text" class="form-control" id="teacherPreferredTimeUpdate" name="teacherPreferredTimeUpdate"
+                placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
+        </div>
+    </div>
+
+    <!-- Button to Update Teacher -->
+    <button class="btn btn-warning" type="button" id="updateTeacherButton">Update</button>
+</div>
+
+<!-- Form for DELEtE -->
+<div class="collapse collapse-sm" id="teacherDeleteFields">
+    <label for="teacherInfoDelete">Teacher Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="teacherCodeDelete" name="teacherCodeDelete"
+                placeholder="Code (e.g., TCH001)">
+        </div>
+        <div class="form-group col">
+            <input type="text" class="form-control" id="teacherNameDelete" name="teacherNameDelete"
+                placeholder="Instructor's Name*" required>
+        </div>
+    </div>
+
+    <!-- Button to Delete Teacher -->
+    <button class="btn btn-danger" type="button" id="deleteTeacherButton">Delete</button>
+</div>
 
 
 
@@ -88,6 +152,7 @@
 
 
     <script src="landingscript.js"></script>
+    <script src="instructors.js"></script>
 
 </body>
 

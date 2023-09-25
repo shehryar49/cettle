@@ -1,44 +1,45 @@
-/* Default Button Styles */
-.btn-addcourses {
+#teacherInputFields {
+    margin-left: 1.5%;
+}
+
+#teacherUpdateFields {
+    margin-left: 1.5%;
+}
+
+#teacherDeleteFields {
+    margin-left: 1.5%;
+}
+
+.collapse-sm {
+    max-width: 44%;
+}
+
+/* Button Styles for Add and Update (renamed to btn-addteacher) */
+.btn-addteacher {
     background-color: #1f3a68; /* Dark blue background color */
     color: #ffffffea; /* Grey text color */
     border: none; /* No border */
     padding: 10px 50px; /* Adjust padding for the button size */
-    border-radius: 1.5px; /* Rounded corners */
+    border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Add pointer cursor on hover */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
     margin-top: 1%;
-    margin-left: 1%;
+    margin-left: 3%;
 }
 
-.btn-addcourses:hover {
+.btn-addteacher:hover {
     background-color: #3c6cb7; /* Darker blue on hover */
     color: #ffffff; /* White text color on hover */
 }
 
-
 /* Button Focus Effect */
-.btn-addcourses:focus {
+.btn-addteacher:focus {
     outline: none; /* Remove focus outline */
     box-shadow: 0 0 5px #0078d4; /* Add a subtle box shadow on focus */
 }
 
 /* Button Active Effect */
-.btn-addcourses:active {
+.btn-addteacher:active {
     background-color: #005a9e; /* Active background color (darker blue) */
     color: #ffffff; /* Active text color (white) */
-}
-
-/*#teacherNameInput, #courseEnrolledInput {
-    /* width: 45%; Adjust the percentage as needed 
-
-}
-*/
-#inputFields{
-    margin-left: 1%;
-}
-
-
-.collapse-sm{
-    max-width: 44%;
 }

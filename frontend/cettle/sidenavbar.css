@@ -11,7 +11,10 @@
     transition: 0.5s;
     padding-top: 80px;
     padding-left: 0px;
+    z-index: 1000;
 }
+
+
 
 
 .sidebar ul {
