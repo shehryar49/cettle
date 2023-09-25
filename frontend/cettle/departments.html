@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cettle - Departments</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="sidenavbar.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="departments.css">
+</head>
+
+<body>
+
+    <!-- ================================================== -->
+
+    <!-- Navbar with Sidebar Toggle -->
+    <nav id="nav_main_features" class="navbar navbar-expand-lg navbar-light bg-light">
+        <!--nav bar to nav to main features-->
+        <!--Sidebar TButton FIRST-->
+
+        <button id="sidebar-toggler" class="navbar-toggler" type="button" data-target="#sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- then CETTLE -->
+        <!-- dept -->
+        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">Departments</a>
+
+        <!-- CETTLE-->
+        <a class="navbar-brand ml-auto" href="index.html" style="font-size: 22px;">CETTLE</a>
+
+
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar"><!--sidebar-id is sidebar-->
+        <span>
+            <ul>
+                <li><a href="Timetable.html">TimeTable</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="sections.html">Sections</a></li>
+            </ul>
+            <span>
+    </div>
+
+    <!-- ================================================== -->
+
+
+    <!--************-->
+    <div class="btn-group" role="group" aria-label="Input Add and Update Fields for Dept">
+        <!-- Button for ADD fields -->
+        <button class="btn btn-adddept" id="deptAddButton" type="button" data-toggle="collapse"
+            data-target="#inputFields" aria-expanded="false" aria-controls="inputFields">
+            Add Department
+        </button>
+
+        <!-- Button for UPDATE -->
+        <button class="btn btn-adddept" id="deptUpdateButton" type="button" data-toggle="collapse"
+            data-target="#updateFields" aria-expanded="false" aria-controls="updateFields">
+            Update Department
+        </button>
+
+        <!-- Button for Delete -->
+        <button class="btn btn-adddept" id="deptDeleteButton" type="button" data-toggle="collapse"
+            data-target="#deleteFields" aria-expanded="false" aria-controls="deleteFields">
+            Delete Department
+        </button>
+    </div>
+
+    <!--================= Form for Add Department =============-->
+    <div class="collapse collapse-sm" id="inputFields">
+    <label for="departmentInfoInput">Department Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="departmentCodeInput" name="departmentCodeInput"
+                placeholder="Dept Code* (e.g., CS)" required>
+        </div>
+        <div class="form-group col">
+            <input type="text" class="form-control" id="departmentNameInput" name="departmentNameInput"
+                placeholder="Department Name (e.g., Computer Science)">
+        </div>
+    </div>
+
+    <!-- Button to Add Department -->
+    <button class="btn btn-success" type="button" id="addDepartmentButton">Add</button>
+</div>
+
+
+<!--================= Form for Update Department =============-->
+
+<div class="collapse collapse-sm" id="updateFields">
+    <label for="departmentInfoUpdate">Department Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="departmentCodeUpdate" name="departmentCodeUpdate"
+                placeholder="Dept Code* (e.g., BCS)" required>
+        </div>
+        <div class="form-group col">
+            <input type="text" class="form-control" id="departmentNameUpdate" name="departmentNameUpdate"
+                placeholder="Department Name (e.g., Computer Science)">
+        </div>
+    </div>
+
+    <!-- Button to Add Department -->
+    <button class="btn btn-warning" type="button" id="updateDepartmentButton">Add</button>
+</div>
+
+<!--================= Form for Delete Department =============-->
+
+<div class="collapse collapse-sm" id="deleteFields">
+    <label for="departmentInfoDelete">Department Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="departmentCodeDelete" name="departmentCodeDelete"
+                placeholder="Dept Code* (e.g., BCS)">
+        </div>
+        <div class="form-group col">
+            <input type="text" class="form-control" id="departmentNameDelete" name="departmentNameDelete"
+                placeholder="Dept Name (e.g., Computer Science)" required>
+        </div>
+    </div>
+
+    <!-- Button to Add Department -->
+    <button class="btn btn-danger" type="button" id="DeleteDepartmentButton">Add</button>
+</div>
+
+
+
+
+    <!-- Bootstrap INIT JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script src="index.js"></script>
+    <script src="departments.js"></script>
+
+</body>
+
+</html>
