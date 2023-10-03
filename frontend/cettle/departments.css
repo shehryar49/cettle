@@ -1,19 +1,19 @@
 
 #inputFields{
-    margin-left: 1.5%;
+    margin-left: 2%;
 }
 
 #updateFields{
-    margin-left: 1.5%;
+    margin-left: 2%;
 }
 
 #deleteFields{
-    margin-left: 1.5%;
+    margin-left: 2%;
 }
 
-.collapse-sm{
+/* .collapse-sm{
     max-width: 44%;
-}
+} */
 
 
 
@@ -22,7 +22,7 @@
     background-color: #1f3a68; /* Dark blue background color */
     color: #ffffffea; /* Grey text color */
     border: none ; /* No border */
-    padding: 10px 50px; /* Adjust padding for the button size */
+    padding: 10px 50px; /* Adjust padding for the button size
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Add pointer cursor on hover */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
