@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cettle - Departments</title>
     <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.html">
+
     <link rel="stylesheet" href="sidenavbar.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="departments.css">
@@ -51,83 +53,115 @@
     <!-- ================================================== -->
 
 
-    <!--************-->
-    <div class="btn-group" role="group" aria-label="Input Add and Update Fields for Dept">
-        <!-- Button for ADD fields -->
-        <button class="btn btn-adddept" id="deptAddButton" type="button" data-toggle="collapse"
-            data-target="#inputFields" aria-expanded="false" aria-controls="inputFields">
-            Add Department
-        </button>
-
-        <!-- Button for UPDATE -->
-        <button class="btn btn-adddept" id="deptUpdateButton" type="button" data-toggle="collapse"
-            data-target="#updateFields" aria-expanded="false" aria-controls="updateFields">
-            Update Department
-        </button>
-
-        <!-- Button for Delete -->
-        <button class="btn btn-adddept" id="deptDeleteButton" type="button" data-toggle="collapse"
-            data-target="#deleteFields" aria-expanded="false" aria-controls="deleteFields">
-            Delete Department
-        </button>
-    </div>
-
-    <!--================= Form for Add Department =============-->
-    <div class="collapse collapse-sm" id="inputFields">
-    <label for="departmentInfoInput">Department Info:</label>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="departmentCodeInput" name="departmentCodeInput"
-                placeholder="Dept Code* (e.g., CS)" required>
-        </div>
-        <div class="form-group col">
-            <input type="text" class="form-control" id="departmentNameInput" name="departmentNameInput"
-                placeholder="Department Name (e.g., Computer Science)">
-        </div>
-    </div>
-
-    <!-- Button to Add Department -->
-    <button class="btn btn-success" type="button" id="addDepartmentButton">Add</button>
-</div>
 
 
-<!--================= Form for Update Department =============-->
+            <!--************-->
+            <div class="col-md-12">
 
-<div class="collapse collapse-sm" id="updateFields">
-    <label for="departmentInfoUpdate">Department Info:</label>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="departmentCodeUpdate" name="departmentCodeUpdate"
-                placeholder="Dept Code* (e.g., BCS)" required>
-        </div>
-        <div class="form-group col">
-            <input type="text" class="form-control" id="departmentNameUpdate" name="departmentNameUpdate"
-                placeholder="Department Name (e.g., Computer Science)">
-        </div>
-    </div>
+                <div class="btn-group" role="group" aria-label="Input Add and Update Fields for Dept">
+                    <!-- Button for ADD fields -->
+                    <button class="btn btn-adddept" id="deptAddButton" type="button" data-toggle="collapse"
+                        data-target="#inputFields" aria-expanded="false" aria-controls="inputFields">
+                        Add Department
+                    </button>
 
-    <!-- Button to Add Department -->
-    <button class="btn btn-warning" type="button" id="updateDepartmentButton">Add</button>
-</div>
+                    <!-- Button for UPDATE -->
+                    <button class="btn btn-adddept" id="deptUpdateButton" type="button" data-toggle="collapse"
+                        data-target="#updateFields" aria-expanded="false" aria-controls="updateFields">
+                        Update Department
+                    </button>
 
-<!--================= Form for Delete Department =============-->
+                    <!-- Button for Delete -->
+                    <button class="btn btn-adddept" id="deptDeleteButton" type="button" data-toggle="collapse"
+                        data-target="#deleteFields" aria-expanded="false" aria-controls="deleteFields">
+                        Delete Department
+                    </button>
+                </div>
 
-<div class="collapse collapse-sm" id="deleteFields">
-    <label for="departmentInfoDelete">Department Info:</label>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="departmentCodeDelete" name="departmentCodeDelete"
-                placeholder="Dept Code* (e.g., BCS)">
-        </div>
-        <div class="form-group col">
-            <input type="text" class="form-control" id="departmentNameDelete" name="departmentNameDelete"
-                placeholder="Dept Name (e.g., Computer Science)" required>
-        </div>
-    </div>
 
-    <!-- Button to Add Department -->
-    <button class="btn btn-danger" type="button" id="DeleteDepartmentButton">Add</button>
-</div>
+
+
+                <!--================= Form for Add Department =============-->
+                <div class="collapse collapse-sm" id="inputFields">
+                    <label for="departmentInfoInput">Department Info:</label>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" id="departmentCodeInput" name="departmentCodeInput"
+                                placeholder="Dept Code* (e.g., CS)" required>
+                        </div>
+                        <div class="form-group col">
+                            <input type="text" class="form-control" id="departmentNameInput" name="departmentNameInput"
+                                placeholder="Department Name (e.g., Computer Science)">
+                        </div>
+                    </div>
+
+                    <!-- Button to Add Department -->
+                    <button class="btn btn-success" type="button" id="addDepartmentButton">Add</button>
+                </div>
+
+
+                <!--================= Form for Update Department =============-->
+
+                <div class="collapse collapse-sm" id="updateFields">
+                    <label for="departmentInfoUpdate">Department Info:</label>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" id="departmentCodeUpdate"
+                                name="departmentCodeUpdate" placeholder="Dept Code* (e.g., BCS)" required>
+                        </div>
+                        <div class="form-group col">
+                            <input type="text" class="form-control" id="departmentNameUpdate"
+                                name="departmentNameUpdate" placeholder="Department Name (e.g., Computer Science)">
+                        </div>
+                    </div>
+
+                    <!-- Button to Add Department -->
+                    <button class="btn btn-warning" type="button" id="updateDepartmentButton">Add</button>
+                </div>
+
+                <!--================= Form for Delete Department =============-->
+
+                <div class="collapse collapse-sm" id="deleteFields">
+                    <label for="departmentInfoDelete">Department Info:</label>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" id="departmentCodeDelete"
+                                name="departmentCodeDelete" placeholder="Dept Code* (e.g., BCS)">
+                        </div>
+                        <div class="form-group col">
+                            <input type="text" class="form-control" id="departmentNameDelete"
+                                name="departmentNameDelete" placeholder="Dept Name (e.g., Computer Science)" required>
+                        </div>
+                    </div>
+
+                    <!-- Button to Add Department -->
+                    <button class="btn btn-danger" type="button" id="DeleteDepartmentButton">Delete</button>
+                </div>
+
+                <!--========================================================================================-->
+            </div>
+
+            <!--*************** TABLE FOR SHOWING ***********************-->
+            <div class="col-md-12 offset-md-12">
+                <!-- Table for Department Input Fields -->
+                <table class="table table-hover table-bordered border-dark">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Code</th>
+                            <th>Department Name</th>
+                        </tr>
+                    </thead>
+                    <tbody id="departmentTableBody">
+                        <!-- Data added through the "Add" button will appear here -->
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+
+
 
 
 
