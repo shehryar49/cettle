@@ -1,17 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     var sidebarToggler = document.getElementById("sidebar-toggler");
     var sidebar = document.getElementById("sidebar");
+    var sidebarTogglerIcon = document.getElementById("navicon");
 
     sidebarToggler.addEventListener("click", function () {
         sidebar.classList.toggle("active");
+
     });
 
     document.addEventListener("click", function (event) {
-        if (sidebar.classList.contains("active") && event.target !== sidebar && event.target !== sidebarToggler) 
+        if (sidebar.classList.contains("active") && event.target !== sidebar && event.target !== sidebarToggler && event.target!==sidebarTogglerIcon) 
         {
             sidebar.classList.remove("active");
-        }
+    }
     });
+
+
+    
+    // sidebarTogglerIcon.addEventListener("click", function () {
+    //     sidebar.classList.toggle("active");
+    //     console.log("done3");
+    // });
 });
 
 

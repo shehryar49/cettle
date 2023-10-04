@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cettle - Instructors</title>
+    <title>Cettle - Sections</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="sidenavbar.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="instructors.css">
+    <link rel="stylesheet" href="section.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         </button>
         <!-- then CETTLE -->
         <!-- dept -->
-        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">Instructors</a>
+        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">Sections</a>
 
         <!-- CETTLE-->
         <a class="navbar-brand ml-auto" href="index.html" style="font-size: 22px;">CETTLE</a>
@@ -43,101 +43,101 @@
         <span>
             <ul>
                 <li><a href="Timetable.html">TimeTable</a></li>
-                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="section.html">Sections</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="departments.html">Departments</a></li>
-                <li><a href="section.html">Sections</a></li>
+                <li><a href="sections.html">Sections</a></li>
             </ul>
             <span>
     </div>
 
     <!-- ================================================== -->
-<!-- teachers.html -->
+<!-- sections.html -->
 
 <div class="btn-group" role="group" aria-label="Input Add and Update Fields">
     <!-- Button for ADD fields -->
-    <button class="btn btn-addteacher" id="teacherAddButton" type="button" data-toggle="collapse"
-        data-target="#teacherInputFields" aria-expanded="false" aria-controls="teacherInputFields">
-        Add Instructor
+    <button class="btn btn-addsection" id="sectionAddButton" type="button" data-toggle="collapse"
+        data-target="#sectionInputFields" aria-expanded="false" aria-controls="sectionInputFields">
+        Add Section
     </button>
 
     <!-- Button for UPDATE -->
-    <button class="btn btn-addteacher" id="teacherUpdateButton" type="button" data-toggle="collapse"
-        data-target="#teacherUpdateFields" aria-expanded="false" aria-controls="teacherUpdateFields">
-        Update Instructor
+    <button class="btn btn-addsection" id="sectionUpdateButton" type="button" data-toggle="collapse"
+        data-target="#sectionUpdateFields" aria-expanded="false" aria-controls="sectionUpdateFields">
+        Update Section
     </button>
 
     <!-- Button for Delete -->
-    <button class="btn btn-addteacher" id="teacherDeleteButton" type="button" data-toggle="collapse"
-        data-target="#teacherDeleteFields" aria-expanded="false" aria-controls="teacherDeleteFields">
-        Delete Instructor
+    <button class="btn btn-addsection" id="sectionDeleteButton" type="button" data-toggle="collapse"
+        data-target="#sectionDeleteFields" aria-expanded="false" aria-controls="sectionDeleteFields">
+        Delete Section
     </button>
 </div>
 
-<!-- TForm for Add Teacher -->
-<div class="collapse collapse-sm" id="teacherInputFields">
-    <label for="teacherInfoInput">Instructor Info:</label>
+<!-- TForm for Add section -->
+<div class="collapse collapse-sm" id="sectionInputFields">
+    <label for="sectionInfoInput">Section Info:</label>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="teacherCodeInput" name="teacherCodeInput"
+            <input type="text" class="form-control" id="sectionCodeInput" name="sectionCodeInput"
                 placeholder="Code (e.g., TCH001)">
         </div>
         <div class="form-group col">
-            <input type="text" class="form-control" id="teacherNameInput" name="teacherNameInput"
-                placeholder="Instructor's Name*" required>
+            <input type="text" class="form-control" id="sectionNameInput" name="sectionNameInput"
+                placeholder="Section's Name*" required>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col">
-            <input type="text" class="form-control" id="teacherPreferredTimeInput" name="teacherPreferredTimeInput"
+            <input type="text" class="form-control" id="sectionPreferredTimeInput" name="sectionPreferredTimeInput"
                 placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
         </div>
     </div>
 
-    <!-- Button to Add Teacher -->
-    <button class="btn btn-success" type="button" id="addTeacherButton">Add</button>
+    <!-- Button to Add section -->
+    <button class="btn btn-success" type="button" id="addsectionButton">Add</button>
 </div>
 
-<!-- The Form Fields to UPDATE Teacher -->
-<div class="collapse collapse-sm" id="teacherUpdateFields">
-    <label for="teacherInfoUpdate">Teacher Info:</label>
+<!-- The Form Fields to UPDATE section -->
+<div class="collapse collapse-sm" id="sectionUpdateFields">
+    <label for="sectionInfoUpdate">section Info:</label>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="teacherCodeUpdate" name="teacherCodeUpdate"
+            <input type="text" class="form-control" id="sectionCodeUpdate" name="sectionCodeUpdate"
                 placeholder="Code (e.g., TCH001)">
         </div>
         <div class="form-group col">
-            <input type="text" class="form-control" id="teacherNameUpdate" name="teacherNameUpdate"
-                placeholder="Instructor's Name*" required>
+            <input type="text" class="form-control" id="sectionNameUpdate" name="sectionNameUpdate"
+                placeholder="Section's Name*" required>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col">
-            <input type="text" class="form-control" id="teacherPreferredTimeUpdate" name="teacherPreferredTimeUpdate"
+            <input type="text" class="form-control" id="sectionPreferredTimeUpdate" name="sectionPreferredTimeUpdate"
                 placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
         </div>
     </div>
 
-    <!-- Button to Update Teacher -->
-    <button class="btn btn-warning" type="button" id="updateTeacherButton">Update</button>
+    <!-- Button to Update section -->
+    <button class="btn btn-warning" type="button" id="updatesectionButton">Update</button>
 </div>
 
 <!-- Form for DELEtE -->
-<div class="collapse collapse-sm" id="teacherDeleteFields">
-    <label for="teacherInfoDelete">Teacher Info:</label>
+<div class="collapse collapse-sm" id="sectionDeleteFields">
+    <label for="sectionInfoDelete">Section Info:</label>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="teacherCodeDelete" name="teacherCodeDelete"
+            <input type="text" class="form-control" id="sectionCodeDelete" name="sectionCodeDelete"
                 placeholder="Code (e.g., TCH001)">
         </div>
         <div class="form-group col">
-            <input type="text" class="form-control" id="teacherNameDelete" name="teacherNameDelete"
-                placeholder="Instructor's Name*" required>
+            <input type="text" class="form-control" id="sectionNameDelete" name="sectionNameDelete"
+                placeholder="Section's Name*" required>
         </div>
     </div>
 
-    <!-- Button to Delete Teacher -->
-    <button class="btn btn-danger" type="button" id="deleteTeacherButton">Delete</button>
+    <!-- Button to Delete section -->
+    <button class="btn btn-danger" type="button" id="deletesectionButton">Delete</button>
 </div>
 
 
@@ -157,7 +157,7 @@
 
 
     <script src="index.js"></script>
-    <script src="instructors.js"></script>
+    <script src="Sections.js"></script>
 
 </body>
 
