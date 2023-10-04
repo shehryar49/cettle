@@ -20,37 +20,66 @@ document.getElementById('courseCodeInput')
     }
 });
 
-$(document).ready(function() 
-{
-    $('#courseAddButton').click(function() 
-    {
+
+$(document).ready(function() {
+    $('#courseAddButton').click(function() {
         toggleCollapse('#inputFields');
     });
 
     // Update
-    $('#courseUpdateButton').click(function() 
-    {
+    $('#courseUpdateButton').click(function() {
         toggleCollapse('#updateFields');
     });
 
-    //Delete Course
-    $('#courseDeleteButton').click(function() 
-    {
+    // Delete Course
+    $('#courseDeleteButton').click(function() {
         toggleCollapse('#deleteFields');
     });
 
-    function toggleCollapse(target) 
-    {                                       // if target button is open then close
-        var $target = $(target);            // else, close all and then open it
-        if ($target.hasClass('show')) 
-        {
+    function toggleCollapse(target) {
+        var $target = $(target);
+        if ($target.hasClass('show')) {
             $target.collapse('hide');
-        } 
-        else 
-        {
-            $('.collapse').collapse('hide');    // Try to Remove delay in FINAL VERSION
-            $target.collapse('show');           // ^Done and it looks Cooler than expected
+        } else {
+            $('.collapse').collapse('hide');
+            $target.collapse('show');
         }
     }
 });
+
+
+//BOOTSTRAP 4
+// $(document).ready(function() 
+// {
+//     $('#courseAddButton').click(function() 
+//     {
+//         toggleCollapse('#inputFields');
+//     });
+
+//     // Update
+//     $('#courseUpdateButton').click(function() 
+//     {
+//         toggleCollapse('#updateFields');
+//     });
+
+//     //Delete Course
+//     $('#courseDeleteButton').click(function() 
+//     {
+//         toggleCollapse('#deleteFields');
+//     });
+
+//     function toggleCollapse(target) 
+//     {                                       // if target button is open then close
+//         var $target = $(target);            // else, close all and then open it
+//         if ($target.hasClass('show')) 
+//         {
+//             $target.collapse('hide');
+//         } 
+//         else 
+//         {
+//             $('.collapse').collapse('hide');    // Try to Remove delay in FINAL VERSION
+//             $target.collapse('show');           // ^Done and it looks Cooler than expected
+//         }
+//     }
+// });
 
