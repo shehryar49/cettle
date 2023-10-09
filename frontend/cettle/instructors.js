@@ -98,5 +98,24 @@ $(document).ready(function()
             $target.collapse('show');           // ^Done and it looks Cooler than expected
         }
     }
-});
 
+    $('#addTeacherButton').click(function() {
+        // Collect instructor information from input fields
+        const teacherCode = document.getElementById('teacherCodeInput').value;
+        const teacherName = document.getElementById('teacherNameInput').value;
+        const teacherPreferredTime = document.getElementById('teacherPreferredTimeInput').value;
+
+        // Create an object with the collected data
+        const instructorData = {
+            teacherCode,
+            teacherName,
+            teacherPreferredTime
+        };
+        console.log(instructorData);
+        var jsonData = JSON.stringify(instructorData);
+        console.log(jsonData);
+    });
+
+
+
+});

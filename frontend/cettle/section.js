@@ -98,5 +98,24 @@ $(document).ready(function()
             $target.collapse('show');           // ^Done and it looks Cooler than expected
         }
     }
+
+
+    $('#addsectionButton').click(function() {
+        // Collect instructor information from input fields
+        const sectionCode = document.getElementById('sectionCodeInput').value;
+        const sectionName = document.getElementById('sectionNameInput').value;
+        const sectionPreferredTime = document.getElementById('sectionPreferredTimeInput').value;
+
+        // Create an object with the collected data
+        const sectionData = {
+            sectionCode,
+            sectionName,
+            sectionPreferredTime
+        };
+        console.log(sectionData);
+        var jsonData = JSON.stringify(sectionData);
+        console.log(jsonData);
+    });
+
 });
 

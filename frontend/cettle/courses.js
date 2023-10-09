@@ -48,6 +48,20 @@ $(document).ready(function() {
 });
 
 
+document.getElementById('addButton').addEventListener('click', function() {
+    const courseCode = document.getElementById('courseCodeInput').value;
+    const courseName = document.getElementById('courseNameInput').value;
+    const courseDepartment = document.getElementById('courseDepartmentInput').value;
+    const courseSection = document.getElementById('courseSectionInput').value;
+    const teacherAlloted = document.getElementById('teacherAllotedInput').value;
+    const studentsEnrolled = document.getElementById('studentsEnrolledInput').value;
+
+    //Print
+    console.log({courseCode, courseName, courseDepartment, courseSection, teacherAlloted, studentsEnrolled });
+});
+
+
+
 //BOOTSTRAP 4
 // $(document).ready(function() 
 // {

@@ -32,6 +32,25 @@ $(document).ready(function () {
             $target.collapse('show');
         }
     }
+
+    // Department information add
+    $('#addDepartmentButton').click(function() {
+        // Collect department information from input fields
+        const deptCode = document.getElementById('departmentCodeInput').value;
+        const deptName = document.getElementById('departmentNameInput').value;
+
+        // Create an object with the collected data
+        const deptData = {
+            deptCode: deptCode,
+            deptName: deptName
+        };
+
+        // Convert the data to JSON
+        const jsonData = JSON.stringify(deptData);
+
+        // Log the JSON data
+        console.log(jsonData);
+    });
 });
 
 
