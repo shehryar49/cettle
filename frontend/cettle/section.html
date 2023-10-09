@@ -7,6 +7,10 @@
     <title>Cettle - Sections</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="sidenavbar.css">
     <link rel="stylesheet" href="index.css">
@@ -18,8 +22,6 @@
     <!-- ================================================== -->
 
     <!-- Navbar with Sidebar Toggle -->
-
-    <!-- Navbar with Sidebar Toggle -->
     <nav id="nav_main_features" class="navbar navbar-expand-lg navbar-light bg-light">
         <!--nav bar to nav to main features-->
         <!--Sidebar TButton FIRST-->
@@ -29,14 +31,13 @@
         </button>
         <!-- then CETTLE -->
         <!-- dept -->
-        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">Sections</a>
+        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">Section</a>
 
         <!-- CETTLE-->
         <a class="navbar-brand ml-auto" href="index.html" style="font-size: 22px;">CETTLE</a>
 
 
     </nav>
-
 
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar"><!--sidebar-id is sidebar-->
@@ -52,108 +53,118 @@
     </div>
 
     <!-- ================================================== -->
-<!-- sections.html -->
 
-<div class="btn-group" role="group" aria-label="Input Add and Update Fields">
-    <!-- Button for ADD fields -->
-    <button class="btn btn-addsection" id="sectionAddButton" type="button" data-toggle="collapse"
-        data-target="#sectionInputFields" aria-expanded="false" aria-controls="sectionInputFields">
-        Add Section
-    </button>
 
-    <!-- Button for UPDATE -->
-    <button class="btn btn-addsection" id="sectionUpdateButton" type="button" data-toggle="collapse"
-        data-target="#sectionUpdateFields" aria-expanded="false" aria-controls="sectionUpdateFields">
-        Update Section
-    </button>
 
-    <!-- Button for Delete -->
-    <button class="btn btn-addsection" id="sectionDeleteButton" type="button" data-toggle="collapse"
-        data-target="#sectionDeleteFields" aria-expanded="false" aria-controls="sectionDeleteFields">
-        Delete Section
-    </button>
-</div>
+    <div class="btn-group" role="group" aria-label="Input Add and Update Fields">
+        <!-- Button for ADD fields -->
+        <button class="btn btn-addsection" id="sectionAddButton" type="button" data-toggle="collapse"
+            data-target="#sectionInputFields" aria-expanded="false" aria-controls="sectionInputFields">
+            Add Section
+        </button>
 
-<!-- TForm for Add section -->
-<div class="collapse collapse-sm" id="sectionInputFields">
-    <label for="sectionInfoInput">Section Info:</label>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="sectionCodeInput" name="sectionCodeInput"
-                placeholder="Code (e.g., TCH001)">
-        </div>
-        <div class="form-group col">
-            <input type="text" class="form-control" id="sectionNameInput" name="sectionNameInput"
-                placeholder="Section's Name*" required>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col">
-            <input type="text" class="form-control" id="sectionPreferredTimeInput" name="sectionPreferredTimeInput"
-                placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
-        </div>
+        <!-- Button for UPDATE -->
+        <button class="btn btn-addsection" id="sectionUpdateButton" type="button" data-toggle="collapse"
+            data-target="#sectionUpdateFields" aria-expanded="false" aria-controls="sectionUpdateFields">
+            Update Section
+        </button>
+
+        <!-- Button for Delete -->
+        <button class="btn btn-addsection" id="sectionDeleteButton" type="button" data-toggle="collapse"
+            data-target="#sectionDeleteFields" aria-expanded="false" aria-controls="sectionDeleteFields">
+            Delete Section
+        </button>
     </div>
 
-    <!-- Button to Add section -->
-    <button class="btn btn-success" type="button" id="addsectionButton">Add</button>
-</div>
+    <!-- TForm for Add section -->
+    <div class="collapse collapse-sm" id="sectionInputFields">
+        <label for="sectionInfoInput">Section Info:</label>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="sectionCodeInput" name="sectionCodeInput"
+                    placeholder="Code (e.g., TCH001)">
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionNameInput" name="sectionNameInput"
+                    placeholder="Section's Name*" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionPreferredTimeInput" name="sectionPreferredTimeInput"
+                    placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
+            </div>
+        </div>
 
-<!-- The Form Fields to UPDATE section -->
-<div class="collapse collapse-sm" id="sectionUpdateFields">
-    <label for="sectionInfoUpdate">section Info:</label>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="sectionCodeUpdate" name="sectionCodeUpdate"
-                placeholder="Code (e.g., TCH001)">
-        </div>
-        <div class="form-group col">
-            <input type="text" class="form-control" id="sectionNameUpdate" name="sectionNameUpdate"
-                placeholder="Section's Name*" required>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col">
-            <input type="text" class="form-control" id="sectionPreferredTimeUpdate" name="sectionPreferredTimeUpdate"
-                placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
-        </div>
-    </div>
-
-    <!-- Button to Update section -->
-    <button class="btn btn-warning" type="button" id="updatesectionButton">Update</button>
-</div>
-
-<!-- Form for DELEtE -->
-<div class="collapse collapse-sm" id="sectionDeleteFields">
-    <label for="sectionInfoDelete">Section Info:</label>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="sectionCodeDelete" name="sectionCodeDelete"
-                placeholder="Code (e.g., TCH001)">
-        </div>
-        <div class="form-group col">
-            <input type="text" class="form-control" id="sectionNameDelete" name="sectionNameDelete"
-                placeholder="Section's Name*" required>
-        </div>
+        <!-- Button to Add section -->
+        <button class="btn btn-success" type="button" id="addsectionButton">Add</button>
     </div>
 
-    <!-- Button to Delete section -->
-    <button class="btn btn-danger" type="button" id="deletesectionButton">Delete</button>
-</div>
+    <!-- The Form Fields to UPDATE section -->
+    <div class="collapse collapse-sm" id="sectionUpdateFields">
+        <label for="sectionInfoUpdate">section Info:</label>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="sectionCodeUpdate" name="sectionCodeUpdate"
+                    placeholder="Code (e.g., TCH001)">
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionNameUpdate" name="sectionNameUpdate"
+                    placeholder="Section's Name*" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionPreferredTimeUpdate"
+                    name="sectionPreferredTimeUpdate"
+                    placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
+            </div>
+        </div>
+
+        <!-- Button to Update section -->
+        <button class="btn btn-warning" type="button" id="updatesectionButton">Update</button>
+    </div>
+
+    <!-- Form for DELEtE -->
+    <div class="collapse collapse-sm" id="sectionDeleteFields">
+        <label for="sectionInfoDelete">Section Info:</label>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="sectionCodeDelete" name="sectionCodeDelete"
+                    placeholder="Code (e.g., TCH001)">
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionNameDelete" name="sectionNameDelete"
+                    placeholder="Section's Name*" required>
+            </div>
+        </div>
+
+        <!-- Button to Delete section -->
+        <button class="btn btn-danger" type="button" id="deletesectionButton">Delete</button>
+    </div>
 
 
 
-<!--************-->
+    <!--************-->
 
 
-<!--************-->
+    <!--************-->
 
 
 
 
     <!-- Bootstrap INIT JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script-->
+    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script-->
+
+
+
+    <!--Bootstrap 5 INIT JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
 
 
     <script src="index.js"></script>
