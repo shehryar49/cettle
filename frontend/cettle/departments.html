@@ -82,18 +82,21 @@
 
 
                 <!--================= Form for Add Department =============-->
+                
                 <div class="collapse collapse-sm" id="inputFields">
-                    <label for="departmentInfoInput">Department Info:</label>
+                    <label for="departmentInfoInput" class="form-label">Department Info:</label>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <input type="text" class="form-control" id="departmentCodeInput" name="departmentCodeInput"
                                 placeholder="Dept Code* (e.g., BCS)" required>
                         </div>
+                        
                         <div class="form-group col">
                             <input type="text" class="form-control" id="departmentNameInput" name="departmentNameInput"
-                                placeholder="Department Name (e.g., Bachelor Computer Science)">
+                                placeholder="Department Name (e.g., Bachelor Computer Science)" required>
                         </div>
                     </div>
+
 
                     <!-- Button to Add Department -->
                     <button class="btn btn-success" type="button" id="addDepartmentButton">Add</button>
@@ -111,7 +114,7 @@
                         </div>
                         <div class="form-group col">
                             <input type="text" class="form-control" id="departmentNameUpdate"
-                                name="departmentNameUpdate" placeholder="Department Name (e.g., Computer Science)">
+                                name="departmentNameUpdate" placeholder="Department Name (e.g., Computer Science)" required>
                         </div>
                     </div>
 
@@ -126,11 +129,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <input type="text" class="form-control" id="departmentCodeDelete"
-                                name="departmentCodeDelete" placeholder="Dept Code* (e.g., BCS)">
+                                name="departmentCodeDelete" placeholder="Dept Code* (e.g., BCS)" required>
                         </div>
                         <div class="form-group col">
                             <input type="text" class="form-control" id="departmentNameDelete"
-                                name="departmentNameDelete" placeholder="Dept Name (e.g., Computer Science)" required>
+                                name="departmentNameDelete" placeholder="Dept Name (e.g., Computer Science)">
                         </div>
                     </div>
 

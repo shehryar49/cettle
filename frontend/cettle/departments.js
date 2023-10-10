@@ -33,7 +33,7 @@ $(document).ready(function () {
         }
     }
 
-    // Department information add
+    //------------------- Department information add
     $('#addDepartmentButton').click(function() {
         // Collect department information from input fields
         const deptCode = document.getElementById('departmentCodeInput').value;
@@ -46,18 +46,65 @@ $(document).ready(function () {
         };
 
         // Convert the data to JSON
-        const jsonData = JSON.stringify(deptData);
+        const departmentJsonData = JSON.stringify(deptData);
 
         // Log the JSON data
-        console.log(jsonData);
+        console.log(departmentJsonData);
     });
 });
 
 
+//-------------------------DATA Handlers
+
+$('#addDepartmentButton').click(function() {
+    // dept input fields
+    const departmentCode = document.getElementById('departmentCodeInput').value;
+    const departmentName = document.getElementById('departmentNameInput').value;
+
+    const departmentData = {
+        departmentCode,
+        departmentName
+    };
+    
+    //Print
+    console.log(departmentData);
+    
+    // for .JSON storage
+    var departmentJsonData = JSON.stringify(departmentData);
 
 
 
 
+    //ADD data to department's table
+    deptAddToTable(departmentData);
+
+});
+
+
+// Function to place data in the table
+function deptAddToTable(departmentData) 
+{
+    // Call table body
+    const tableBody = $('#departmentTableBody');
+
+    // Create a new row
+    const newRow = $('<tr>');
+
+    // Cell data for each
+    const deptCodeField = $('<td>');
+    const deptNameField = $('<td>');
+
+    // Populate cells with content
+    deptCodeField.text(departmentData.departmentCode);
+    deptNameField.text(departmentData.departmentName);
+
+    // Append cells to the new row
+    newRow.append(deptCodeField, deptNameField);
+
+    // Append the new row to the table
+    tableBody.append(newRow);
+
+}
 
 
 
