@@ -75,14 +75,30 @@ $('#addDepartmentButton').click(function() {
 
 
 
-    //ADD data to department's table
-    deptAddToTable(departmentData);
+        //--------------------------------------------------------------------------
+        fetch('https://localhost:5000/departments', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ departmentData })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data sent successfully:', data);
+        })
+        .catch(error => {
+            console.error('Error sending data:', error);
+        });
 
+
+        //ADD data to department's table
+        AddToTable(departmentData);
 });
 
 
 // Function to place data in the table
-function deptAddToTable(departmentData) 
+function AddToTable(departmentData) 
 {
     // Call table body
     const tableBody = $('#departmentTableBody');

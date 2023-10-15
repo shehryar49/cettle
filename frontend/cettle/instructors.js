@@ -8,7 +8,7 @@ document.getElementById('teacherCodeInput')
     const pastedText = (e.clipboardData || window.clipboardData).getData('text');
     // Split the pasted content by spaces
     const halfstring = pastedText.split(' ');
-    // give halfstring to Code and Course Name
+    // give halfstring to Code and instructor Name
     if (halfstring.length >= 1)
     {
         document.getElementById('teacherCodeInput').value = halfstring[0];
@@ -29,7 +29,7 @@ document.getElementById('teacherCodeUpdate')
     const pastedText = (e.clipboardData || window.clipboardData).getData('text');
     // Split the pasted content by spaces
     const halfstring = pastedText.split(' ');
-    // give halfstring to Code and Course Name
+    // give halfstring to Code and instructor Name
     if (halfstring.length >= 1)
     {
         document.getElementById('teacherCodeUpdate').value = halfstring[0];
@@ -53,7 +53,7 @@ document.getElementById('teacherCodeDelete')
     const pastedText = (e.clipboardData || window.clipboardData).getData('text');
     // Split the pasted content by spaces
     const halfstring = pastedText.split(' ');
-    // give halfstring to Code and Course Name
+    // give halfstring to Code and instructor Name
     if (halfstring.length >= 1)
     {
         document.getElementById('teacherCodeDelete').value = halfstring[0];
@@ -79,7 +79,7 @@ $(document).ready(function()
         toggleCollapse('#teacherUpdateFields');
     });
 
-    //Delete Course
+    //Delete instructor
     $('#teacherDeleteButton').click(function() 
     {
         toggleCollapse('#teacherDeleteFields');
@@ -114,8 +114,53 @@ $(document).ready(function()
         console.log(instructorData);
         var jsonData = JSON.stringify(instructorData);
         console.log(jsonData);
+    
+
+    //--------------------------------------------------------------------------
+        fetch('https://localhost:5000/instructors', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ instructorData })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data sent successfully:', data);
+        })
+        .catch(error => {
+            console.error('Error sending data:', error);
+        });
+
+
+     //ADD data to instructor table
+     AddToTable(instructorData);
+
     });
-
-
-
 });
+
+function AddToTable(instructorData) 
+{
+    // Call table body
+    const tableBody = $('#instructorTableBody');
+
+    // Create a new row
+    const newRow = $('<tr>');
+
+    // Cell data for each
+    const codeField = $('<td>');
+    const nameField = $('<td>');
+    const timeField = $('<td>');
+
+    // Populate cells with content
+    codeField.text(instructorData.teacherCode);
+    nameField.text(instructorData.teacherName);
+    timeField.text(instructorData.teacherPreferredTime);
+
+    // Append cells to the new row
+    newRow.append(codeField, nameField, timeField);
+
+    // Append the new row to the table
+    tableBody.append(newRow);
+
+}

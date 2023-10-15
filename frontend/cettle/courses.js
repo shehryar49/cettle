@@ -56,11 +56,70 @@ document.getElementById('addButton').addEventListener('click', function() {
     const teacherAlloted = document.getElementById('teacherAllotedInput').value;
     const studentsEnrolled = document.getElementById('studentsEnrolledInput').value;
 
+    const courseData = {
+        courseCode, 
+        courseName, 
+        courseDepartment, 
+        courseSection, 
+        teacherAlloted, 
+        studentsEnrolled 
+    }
     //Print
     console.log({courseCode, courseName, courseDepartment, courseSection, teacherAlloted, studentsEnrolled });
+
+
+    //--------------------------------------------------------------------------
+        fetch('https://localhost:5000/courses', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ courseData })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data sent successfully:', data);
+        })
+        .catch(error => {
+            console.error('Error sending data:', error);
+        });
+
+        //ADD data to course table
+        AddToTable(courseData);
+
 });
 
+function AddToTable(courseData) 
+{
+    // Call table body
+    const tableBody = $('#courseTableBody');
 
+    // Create a new row
+    const newRow = $('<tr>');
+
+    // Cell data for each
+    const codeField = $('<td>');
+    const nameField = $('<td>');
+    const deptField = $('<td>');
+    const sectionField = $('<td>');
+    const allotedField = $('<td>');
+    const enrolledField = $('<td>');
+
+    // Populate cells with content
+    codeField.text(courseData.courseCode);
+    nameField.text(courseData.courseName);
+    deptField.text(courseData.courseDepartment);
+    sectionField.text(courseData.courseSection);
+    allotedField.text(courseData.teacherAlloted);
+    enrolledField.text(courseData.studentsEnrolled);
+
+    // Append cells to the new row
+    newRow.append(codeField, nameField, deptField, sectionField, allotedField, enrolledField);
+
+    // Append the new row to the table
+    tableBody.append(newRow);
+
+}
 
 //BOOTSTRAP 4
 // $(document).ready(function() 

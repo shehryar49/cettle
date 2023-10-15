@@ -101,7 +101,7 @@ $(document).ready(function()
 
 
     $('#addsectionButton').click(function() {
-        // Collect instructor information from input fields
+        // Collect section information from input fields
         const sectionCode = document.getElementById('sectionCodeInput').value;
         const sectionName = document.getElementById('sectionNameInput').value;
         const sectionPreferredTime = document.getElementById('sectionPreferredTimeInput').value;
@@ -115,7 +115,56 @@ $(document).ready(function()
         console.log(sectionData);
         var jsonData = JSON.stringify(sectionData);
         console.log(jsonData);
-    });
+
+        //--------------------------------------------------------------------------
+        fetch('https://localhost:5000/section', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ sectionData })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data sent successfully:', data);
+        })
+        .catch(error => {
+            console.error('Error sending data:', error);
+        });
+
+
+    //ADD data to section table
+    AddToTable(sectionData);
+
 
 });
 
+
+
+});
+
+function AddToTable(sectionData) 
+{
+    // Call table body
+    const tableBody = $('#sectionTableBody');
+
+    // Create a new row
+    const newRow = $('<tr>');
+
+    // Cell data for each
+    const codeField = $('<td>');
+    const nameField = $('<td>');
+    const timeField = $('<td>');
+
+    // Populate cells with content
+    codeField.text(sectionData.sectionCode);
+    nameField.text(sectionData.sectionName);
+    timeField.text(sectionData.sectionPreferredTime);
+
+    // Append cells to the new row
+    newRow.append(codeField, nameField, timeField);
+
+    // Append the new row to the table
+    tableBody.append(newRow);
+
+}
