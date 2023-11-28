@@ -1,5 +1,4 @@
-
-
+//---------> FOR ADD
 document.getElementById('courseCodeInput')
 .addEventListener('paste', function(e)
 {
@@ -20,56 +19,105 @@ document.getElementById('courseCodeInput')
     }
 });
 
+//---------> FOR UPDATE
+document.getElementById('courseCodeUpdate')
+.addEventListener('paste', function(e)
+{
+    e.preventDefault(); // stpo default pasting
 
-$(document).ready(function() {
-    $('#courseAddButton').click(function() {
-        toggleCollapse('#inputFields');
-    });
-
-    // Update
-    $('#courseUpdateButton').click(function() {
-        toggleCollapse('#updateFields');
-    });
-
-    // Delete Course
-    $('#courseDeleteButton').click(function() {
-        toggleCollapse('#deleteFields');
-    });
-
-    function toggleCollapse(target) {
-        var $target = $(target);
-        if ($target.hasClass('show')) {
-            $target.collapse('hide');
-        } else {
-            $('.collapse').collapse('hide');
-            $target.collapse('show');
-        }
+    // Get Paste string
+    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+    // Split the pasted content by spaces
+    const halfstring = pastedText.split(' ');
+    // give halfstring to Code and Course Name
+    if (halfstring.length >= 1)
+    {
+        document.getElementById('courseCodeUpdate').value = halfstring[0];
+    }
+    if (halfstring.length >= 2)
+    {
+        document.getElementById('courseNameUpdate').value = halfstring.slice(1).join(' ');
     }
 });
 
 
-document.getElementById('addButton').addEventListener('click', function() {
-    const courseCode = document.getElementById('courseCodeInput').value;
-    const courseName = document.getElementById('courseNameInput').value;
-    const courseDepartment = document.getElementById('courseDepartmentInput').value;
-    const courseSection = document.getElementById('courseSectionInput').value;
-    const teacherAlloted = document.getElementById('teacherAllotedInput').value;
-    const studentsEnrolled = document.getElementById('studentsEnrolledInput').value;
 
-    const courseData = {
-        courseCode, 
-        courseName, 
-        courseDepartment, 
-        courseSection, 
-        teacherAlloted, 
-        studentsEnrolled 
+
+//---------> FOR DELETE
+document.getElementById('courseCodeDelete')
+.addEventListener('paste', function(e)
+{
+    e.preventDefault(); // stop default pasting
+
+    // Get Paste string
+    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+    // Split the pasted content by spaces
+    const halfstring = pastedText.split(' ');
+    // give halfstring to Code and Course Name
+    if (halfstring.length >= 1)
+    {
+        document.getElementById('courseCodeDelete').value = halfstring[0];
     }
-    //Print
-    console.log({courseCode, courseName, courseDepartment, courseSection, teacherAlloted, studentsEnrolled });
+    if (halfstring.length >= 2)
+    {
+        document.getElementById('courseNameDelete').value = halfstring.slice(1).join(' ');
+    }
+});
 
 
-    //--------------------------------------------------------------------------
-        fetch('https://localhost:5000/courses', {
+
+$(document).ready(function() 
+{
+    $('#courseAddButton').click(function() 
+    {
+        toggleCollapse('#courseInputFields');
+    });
+
+    // Update
+    $('#courseUpdateButton').click(function() 
+    {
+        toggleCollapse('#courseUpdateFields');
+    });
+
+    //Delete Course
+    $('#courseDeleteButton').click(function() 
+    {
+        toggleCollapse('#courseDeleteFields');
+    });
+
+    function toggleCollapse(target) 
+    {                                       // if target button is open then close
+        var $target = $(target);            // else, close all and then open it
+        if ($target.hasClass('show')) 
+        {
+            $target.collapse('hide');
+        } 
+        else 
+        {
+            $('.collapse').collapse('hide');    // Try to Remove delay in FINAL VERSION
+            $target.collapse('show');           // ^Done and it looks Cooler than expected
+        }
+    }
+
+
+    $('#addcourseButton').click(function() {
+        // Collect course information from input fields
+        const courseCode = document.getElementById('courseCodeInput').value;
+        const courseName = document.getElementById('courseNameInput').value;
+        const coursePreferredTime = document.getElementById('coursePreferredTimeInput').value;
+
+        // Create an object with the collected data
+        const courseData = {
+            courseCode,
+            courseName,
+            coursePreferredTime
+        };
+        console.log(courseData);
+        var jsonData = JSON.stringify(courseData);
+        console.log(jsonData);
+
+        //--------------------------------------------------------------------------
+        fetch('https://localhost:5000/course', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -84,8 +132,14 @@ document.getElementById('addButton').addEventListener('click', function() {
             console.error('Error sending data:', error);
         });
 
-        //ADD data to course table
-        AddToTable(courseData);
+
+    //ADD data to course table
+    AddToTable(courseData);
+
+
+});
+
+
 
 });
 
@@ -100,59 +154,17 @@ function AddToTable(courseData)
     // Cell data for each
     const codeField = $('<td>');
     const nameField = $('<td>');
-    const deptField = $('<td>');
-    const sectionField = $('<td>');
-    const allotedField = $('<td>');
-    const enrolledField = $('<td>');
+    const timeField = $('<td>');
 
     // Populate cells with content
     codeField.text(courseData.courseCode);
     nameField.text(courseData.courseName);
-    deptField.text(courseData.courseDepartment);
-    sectionField.text(courseData.courseSection);
-    allotedField.text(courseData.teacherAlloted);
-    enrolledField.text(courseData.studentsEnrolled);
+    timeField.text(courseData.coursePreferredTime);
 
     // Append cells to the new row
-    newRow.append(codeField, nameField, deptField, sectionField, allotedField, enrolledField);
+    newRow.append(codeField, nameField, timeField);
 
     // Append the new row to the table
     tableBody.append(newRow);
 
 }
-
-//BOOTSTRAP 4
-// $(document).ready(function() 
-// {
-//     $('#courseAddButton').click(function() 
-//     {
-//         toggleCollapse('#inputFields');
-//     });
-
-//     // Update
-//     $('#courseUpdateButton').click(function() 
-//     {
-//         toggleCollapse('#updateFields');
-//     });
-
-//     //Delete Course
-//     $('#courseDeleteButton').click(function() 
-//     {
-//         toggleCollapse('#deleteFields');
-//     });
-
-//     function toggleCollapse(target) 
-//     {                                       // if target button is open then close
-//         var $target = $(target);            // else, close all and then open it
-//         if ($target.hasClass('show')) 
-//         {
-//             $target.collapse('hide');
-//         } 
-//         else 
-//         {
-//             $('.collapse').collapse('hide');    // Try to Remove delay in FINAL VERSION
-//             $target.collapse('show');           // ^Done and it looks Cooler than expected
-//         }
-//     }
-// });
-

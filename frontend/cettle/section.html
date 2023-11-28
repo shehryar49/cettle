@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cettle - Sections</title>
+    <title>Cettle - section</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Link to Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="sidenavbar.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="section.css">
@@ -19,7 +18,7 @@
 
 <body>
 
-    <!-- ================================================== -->
+    <!-- section ================================================== -->
 
     <!-- Navbar with Sidebar Toggle -->
     <nav id="nav_main_features" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,8 +29,8 @@
             <span class="navbar-toggler-icon" id="navicon"></span>
         </button>
         <!-- then CETTLE -->
-        <!-- dept -->
-        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">Section</a>
+        <!-- section -->
+        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">section</a>
 
         <!-- CETTLE-->
         <a class="navbar-brand ml-auto" href="index.html" style="font-size: 22px;">CETTLE</a>
@@ -49,124 +48,182 @@
                 <li><a href="departments.html">Departments</a></li>
                 <li><a href="section.html">Sections</a></li>
             </ul>
-            <span>
+        <span>
     </div>
-
     <!-- ================================================== -->
-
-
-
+    <!--************-->
     <div class="btn-group" role="group" aria-label="Input Add and Update Fields">
         <!-- Button for ADD fields -->
         <button class="btn btn-addsection" id="sectionAddButton" type="button" data-toggle="collapse"
-            data-target="#sectionInputFields" aria-expanded="false" aria-controls="sectionInputFields">
-            Add Section
+            data-target="#inputFields" aria-expanded="false" aria-controls="inputFields">
+            Add section
         </button>
 
         <!-- Button for UPDATE -->
         <button class="btn btn-addsection" id="sectionUpdateButton" type="button" data-toggle="collapse"
-            data-target="#sectionUpdateFields" aria-expanded="false" aria-controls="sectionUpdateFields">
-            Update Section
+            data-target="#updateFields" aria-expanded="false" aria-controls="updateFields">
+            Update section
         </button>
 
         <!-- Button for Delete -->
         <button class="btn btn-addsection" id="sectionDeleteButton" type="button" data-toggle="collapse"
-            data-target="#sectionDeleteFields" aria-expanded="false" aria-controls="sectionDeleteFields">
-            Delete Section
+            data-target="#deleteFields" aria-expanded="false" aria-controls="deleteFields">
+            Delete section
         </button>
     </div>
-
-    <!-- TForm for Add section -->
-    <div class="collapse collapse-sm" id="sectionInputFields">
-        <label for="sectionInfoInput">Section Info:</label>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="sectionCodeInput" name="sectionCodeInput"
-                    placeholder="Code (e.g., TCH001)">
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionNameInput" name="sectionNameInput"
-                    placeholder="Section's Name*" required>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionPreferredTimeInput" name="sectionPreferredTimeInput"
-                    placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
-            </div>
-        </div>
-
-        <!-- Button to Add section -->
-        <button class="btn btn-success" type="button" id="addsectionButton">Add</button>
-    </div>
-
-    <!-- The Form Fields to UPDATE section -->
-    <div class="collapse collapse-sm" id="sectionUpdateFields">
-        <label for="sectionInfoUpdate">section Info:</label>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="sectionCodeUpdate" name="sectionCodeUpdate"
-                    placeholder="Code (e.g., TCH001)">
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionNameUpdate" name="sectionNameUpdate"
-                    placeholder="Section's Name*" required>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionPreferredTimeUpdate"
-                    name="sectionPreferredTimeUpdate"
-                    placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
-            </div>
-        </div>
-
-        <!-- Button to Update section -->
-        <button class="btn btn-warning" type="button" id="updatesectionButton">Update</button>
-    </div>
-
-    <!-- Form for DELEtE -->
-    <div class="collapse collapse-sm" id="sectionDeleteFields">
-        <label for="sectionInfoDelete">Section Info:</label>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="sectionCodeDelete" name="sectionCodeDelete"
-                    placeholder="Code (e.g., TCH001)">
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionNameDelete" name="sectionNameDelete"
-                    placeholder="Section's Name*" required>
-            </div>
-        </div>
-
-        <!-- Button to Delete section -->
-        <button class="btn btn-danger" type="button" id="deletesectionButton">Delete</button>
-    </div>
-
 
 
     <!--************-->
 
-<!--*************** TABLE FOR SHOWING ***********************-->
-<div class="col-12 mt-3">
-    <!-- Table for Department Fields -->
-    <table class="table table-hover table-bordered border-dark ">
-        <thead class="table-dark">
-            <tr>
-                <th>Code</th>
-                <th>Section Name</th>
-                <th>Section time</th>
-            </tr>
-        </thead>
-        <tbody id="sectionTableBody">
-            <!-- Data from input fields -->
-        </tbody>
-    </table>
+    <!-- The Form Feilds for Add section -->
+    <div class="collapse collapse-sm" id="inputFields">
+        <label for="sectionInfoInput">section Info:</label>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="sectionCodeInput" name="sectionCodeInput"
+                    placeholder="Code (eg MT4001)*" required>
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionNameInput" name="sectionNameInput"
+                    placeholder="section Name*" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionDepartmentInput" name="sectionDepartmentInput"
+                    placeholder="Dept* (eg. BCS)" required>
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionectionInput" name="sectionectionInput"
+                    placeholder="Section* (eg. 4J)" required>
+            </div>
+        </div>
 
-</div>
+        <div class="form-group">
+            <label for="teacherAllotedInput">Instructor Alloted:</label>
+            <input type="text" class="form-control" id="teacherAllotedInput" name="teacherAllotedInput">
+        </div>
 
 
-<!--************-->
+        <div class="form-group">
+            <label for="studentsEnrolledInput lg">Number of Students Enrolled:</label>
+            <input type="text" class="form-control" id="studentsEnrolledInput" name="studentsEnrolledInput">
+        </div>
+        <!-- Button to Add section -->
+        <button class="btn btn-success" type="button" id="addButton">Add</button>
+    </div>
+
+    <!-- ***************************************************** -->
+
+
+
+
+    <!-- The Form Fields for Update section -->
+    <div class="collapse collapse-sm" id="updateFields">
+        <label for="sectionInfoUpdate">section Info:</label>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="sectionCodeUpdate" name="sectionCodeUpdate"
+                    placeholder="Code (eg MT4001)*" required>
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionNameUpdate" name="sectionNameUpdate"
+                    placeholder="section Name*" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionDepartmentUpdate" name="sectionDepartmentUpdate"
+                    placeholder="Dept* (eg. BCS)" required>
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionectionUpdate" name="sectionectionUpdate"
+                    placeholder="Section* (eg. 4J)" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="teacherAllotedUpdate">Instructor Alloted:</label>
+            <input type="text" class="form-control" id="teacherAllotedUpdate" name="teacherAllotedUpdate">
+        </div>
+
+        <div class="form-group">
+            <label for="studentsEnrolledUpdate">Number of Students Enrolled:</label>
+            <input type="text" class="form-control" id="studentsEnrolledUpdate" name="studentsEnrolledUpdate">
+        </div>
+        <!-- Button to Update section -->
+        <button class="btn btn-warning" type="button" id="updateButton">Update</button>
+    </div>
+    <!--******************************-->
+
+    <!-- ***************************************************** -->
+
+
+
+
+    <!-- The Form Fields for DELETE section -->
+    <div class="collapse collapse-sm" id="deleteFields">
+        <label for="sectionInfoDelete">section Info:</label>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="sectionCodeDelete" name="sectionCodeDelete"
+                    placeholder="Code (eg MT4001)*" required>
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionNameDelete" name="sectionNameDelete"
+                    placeholder="section Name*" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionDepartmentDelete" name="sectionDepartmentDelete"
+                    placeholder="Dept* (eg. BCS)" required>
+            </div>
+            <div class="form-group col">
+                <input type="text" class="form-control" id="sectionectionDelete" name="sectionectionDelete"
+                    placeholder="Section* (eg. 4J)" required>
+            </div>      
+        </div>
+
+        <div class="form-group">
+            <label for="teacherAllotedDelete">Instructor Alloted:</label>
+            <input type="text" class="form-control" id="teacherAllotedDelete" name="teacherAllotedDelete">
+        </div>
+
+        <div class="form-group">
+            <label for="studentsEnrolledDelete">Number of Students Enrolled:</label>
+            <input type="text" class="form-control" id="studentsEnrolledDelete" name="studentsEnrolledDelete">
+        </div>
+        <!-- Button to Update section -->
+        <button class="btn btn-danger" type="button" id="deleteButton">Delete</button>
+    </div>
+    <!--******************************-->
+
+    <!--*************** TABLE FOR SHOWING ***********************-->
+    <div class="col-12 mt-3">
+        <!-- Table for Department Fields -->
+        <table class="table table-hover table-bordered border-dark ">
+            <thead class="table-dark">
+                <tr>
+                    <th>Code</th>
+                    <th>section Name</th>
+                    <th>Dept</th>
+                    <th>Section</th>
+                    <th>Instructor Name</th>
+                    <th>#Enrolled</th>
+                </tr>
+            </thead>
+            <tbody id="sectionTableBody">
+                <!-- Data from input fields -->
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <!--************-->
+
+
     <!--************-->
 
 
@@ -174,16 +231,15 @@
 
     <!-- Bootstrap INIT JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Bootstrap 4 INIT JavaScript NOT NEEDED NOW-->
     <!--script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script-->
     <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script-->
 
 
 
     <!--Bootstrap 5 INIT JavaScript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
     <script src="index.js"></script>

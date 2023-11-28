@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cettle - Courses</title>
+    <title>Cettle - courses</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Link to Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="sidenavbar.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="sidenavbar.css">
     <link rel="stylesheet" href="courses.css">
 </head>
 
@@ -29,8 +29,8 @@
             <span class="navbar-toggler-icon" id="navicon"></span>
         </button>
         <!-- then CETTLE -->
-        <!-- Courses -->
-        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">Courses</a>
+        <!-- dept -->
+        <a class="navbar-brand" href="#" style="font-size: 18px; margin-left: 20px; font-weight: bold;">course</a>
 
         <!-- CETTLE-->
         <a class="navbar-brand ml-auto" href="index.html" style="font-size: 22px;">CETTLE</a>
@@ -46,184 +46,122 @@
                 <li><a href="instructors.html">Instructors</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="departments.html">Departments</a></li>
-                <li><a href="section.html">Sections</a></li>
+                <li><a href="section.html">courses</a></li>
             </ul>
-        <span>
+            <span>
     </div>
+
     <!-- ================================================== -->
-    <!--************-->
+
+
+
     <div class="btn-group" role="group" aria-label="Input Add and Update Fields">
         <!-- Button for ADD fields -->
-        <button class="btn btn-addcourses" id="courseAddButton" type="button" data-toggle="collapse"
-            data-target="#inputFields" aria-expanded="false" aria-controls="inputFields">
-            Add Course
+        <button class="btn btn-addcourse" id="courseAddButton" type="button" data-toggle="collapse"
+            data-target="#courseInputFields" aria-expanded="false" aria-controls="courseInputFields">
+            Add course
         </button>
 
         <!-- Button for UPDATE -->
-        <button class="btn btn-addcourses" id="courseUpdateButton" type="button" data-toggle="collapse"
-            data-target="#updateFields" aria-expanded="false" aria-controls="updateFields">
-            Update Course
+        <button class="btn btn-addcourse" id="courseUpdateButton" type="button" data-toggle="collapse"
+            data-target="#courseUpdateFields" aria-expanded="false" aria-controls="courseUpdateFields">
+            Update course
         </button>
 
         <!-- Button for Delete -->
-        <button class="btn btn-addcourses" id="courseDeleteButton" type="button" data-toggle="collapse"
-            data-target="#deleteFields" aria-expanded="false" aria-controls="deleteFields">
-            Delete Course
+        <button class="btn btn-addcourse" id="courseDeleteButton" type="button" data-toggle="collapse"
+            data-target="#courseDeleteFields" aria-expanded="false" aria-controls="courseDeleteFields">
+            Delete course
         </button>
     </div>
 
-
-    <!--************-->
-
-    <!-- The Form Feilds for Add Course -->
-    <div class="collapse collapse-sm" id="inputFields">
-        <label for="courseInfoInput">Course Info:</label>
+    <!-- TForm for Add course -->
+    <div class="collapse collapse-sm" id="courseInputFields">
+        <label for="courseInfoInput">course Info:</label>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <input type="text" class="form-control" id="courseCodeInput" name="courseCodeInput"
-                    placeholder="Code (eg MT4001)*" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="courseNameInput" name="courseNameInput"
-                    placeholder="Course Name*" required>
+                    placeholder="Code (e.g., BCS-5E)">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col">
-                <input type="text" class="form-control" id="courseDepartmentInput" name="courseDepartmentInput"
-                    placeholder="Dept* (eg. BCS)" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="courseSectionInput" name="courseSectionInput"
-                    placeholder="Section* (eg. 4J)" required>
+                <input type="text" class="form-control" id="coursePreferredTimeInput" name="coursePreferredTimeInput"
+                    placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="teacherAllotedInput">Instructor Alloted:</label>
-            <input type="text" class="form-control" id="teacherAllotedInput" name="teacherAllotedInput">
-        </div>
-
-
-        <div class="form-group">
-            <label for="studentsEnrolledInput lg">Number of Students Enrolled:</label>
-            <input type="text" class="form-control" id="studentsEnrolledInput" name="studentsEnrolledInput">
-        </div>
-        <!-- Button to Add Course -->
-        <button class="btn btn-success" type="button" id="addButton">Add</button>
+        <!-- Button to Add course -->
+        <button class="btn btn-success" type="button" id="addcourseButton">Add</button>
     </div>
 
-    <!-- ***************************************************** -->
-
-
-
-
-    <!-- The Form Fields for Update Course -->
-    <div class="collapse collapse-sm" id="updateFields">
-        <label for="courseInfoUpdate">Course Info:</label>
+    <!-- The Form Fields to UPDATE course -->
+    <div class="collapse collapse-sm" id="courseUpdateFields">
+        <label for="courseInfoUpdate">course Info:</label>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <input type="text" class="form-control" id="courseCodeUpdate" name="courseCodeUpdate"
-                    placeholder="Code (eg MT4001)*" required>
+                    placeholder="Code (e.g., TCH001)">
             </div>
             <div class="form-group col">
                 <input type="text" class="form-control" id="courseNameUpdate" name="courseNameUpdate"
-                    placeholder="Course Name*" required>
+                    placeholder="course's Name*" required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col">
-                <input type="text" class="form-control" id="courseDepartmentUpdate" name="courseDepartmentUpdate"
-                    placeholder="Dept* (eg. BCS)" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="courseSectionUpdate" name="courseSectionUpdate"
-                    placeholder="Section* (eg. 4J)" required>
+                <input type="text" class="form-control" id="coursePreferredTimeUpdate"
+                    name="coursePreferredTimeUpdate"
+                    placeholder="Preferred Time (eg., '7.00AM-1.00PM', '3.00PM-8.00PM' )">
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="teacherAllotedUpdate">Instructor Alloted:</label>
-            <input type="text" class="form-control" id="teacherAllotedUpdate" name="teacherAllotedUpdate">
-        </div>
-
-        <div class="form-group">
-            <label for="studentsEnrolledUpdate">Number of Students Enrolled:</label>
-            <input type="text" class="form-control" id="studentsEnrolledUpdate" name="studentsEnrolledUpdate">
-        </div>
-        <!-- Button to Update Course -->
-        <button class="btn btn-warning" type="button" id="updateButton">Update</button>
+        <!-- Button to Update course -->
+        <button class="btn btn-warning" type="button" id="updatecourseButton">Update</button>
     </div>
-    <!--******************************-->
 
-    <!-- ***************************************************** -->
-
-
-
-
-    <!-- The Form Fields for DELETE Course -->
-    <div class="collapse collapse-sm" id="deleteFields">
-        <label for="courseInfoDelete">Course Info:</label>
+    <!-- Form for DELEtE -->
+    <div class="collapse collapse-sm" id="courseDeleteFields">
+        <label for="courseInfoDelete">course Info:</label>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <input type="text" class="form-control" id="courseCodeDelete" name="courseCodeDelete"
-                    placeholder="Code (eg MT4001)*" required>
+                    placeholder="Code (e.g., TCH001)">
             </div>
             <div class="form-group col">
                 <input type="text" class="form-control" id="courseNameDelete" name="courseNameDelete"
-                    placeholder="Course Name*" required>
+                    placeholder="course's Name*" required>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <input type="text" class="form-control" id="courseDepartmentDelete" name="courseDepartmentDelete"
-                    placeholder="Dept* (eg. BCS)" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="courseSectionDelete" name="courseSectionDelete"
-                    placeholder="Section* (eg. 4J)" required>
-            </div>      
-        </div>
 
-        <div class="form-group">
-            <label for="teacherAllotedDelete">Instructor Alloted:</label>
-            <input type="text" class="form-control" id="teacherAllotedDelete" name="teacherAllotedDelete">
-        </div>
-
-        <div class="form-group">
-            <label for="studentsEnrolledDelete">Number of Students Enrolled:</label>
-            <input type="text" class="form-control" id="studentsEnrolledDelete" name="studentsEnrolledDelete">
-        </div>
-        <!-- Button to Update Course -->
-        <button class="btn btn-danger" type="button" id="deleteButton">Delete</button>
+        <!-- Button to Delete course -->
+        <button class="btn btn-danger" type="button" id="deletecourseButton">Delete</button>
     </div>
-    <!--******************************-->
 
-    <!--*************** TABLE FOR SHOWING ***********************-->
-    <div class="col-12 mt-3">
-        <!-- Table for Department Fields -->
-        <table class="table table-hover table-bordered border-dark ">
-            <thead class="table-dark">
-                <tr>
-                    <th>Code</th>
-                    <th>Course Name</th>
-                    <th>Dept</th>
-                    <th>Section</th>
-                    <th>Instructor Name</th>
-                    <th>#Enrolled</th>
-                </tr>
-            </thead>
-            <tbody id="courseTableBody">
-                <!-- Data from input fields -->
-            </tbody>
-        </table>
-
-    </div>
 
 
     <!--************-->
 
+<!--*************** TABLE FOR SHOWING ***********************-->
+<div class="col-12 mt-3">
+    <!-- Table for Department Fields -->
+    <table class="table table-hover table-bordered border-dark ">
+        <thead class="table-dark">
+            <tr>
+                <th>Code</th>
+                <th>course Name</th>
+                <th>course time</th>
+            </tr>
+        </thead>
+        <tbody id="courseTableBody">
+            <!-- Data from input fields -->
+        </tbody>
+    </table>
 
+</div>
+
+
+<!--************-->
     <!--************-->
 
 
@@ -231,15 +169,16 @@
 
     <!-- Bootstrap INIT JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-    <!-- Bootstrap 4 INIT JavaScript NOT NEEDED NOW-->
     <!--script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script-->
     <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script-->
 
 
 
     <!--Bootstrap 5 INIT JavaScript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
 
 
     <script src="index.js"></script>
