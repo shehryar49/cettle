@@ -47,81 +47,160 @@ $(document).ready(function() {
     }
 });
 
-
 document.getElementById('addButton').addEventListener('click', function() {
-    const sectionCode = document.getElementById('sectionCodeInput').value;
-    const sectionName = document.getElementById('sectionNameInput').value;
-    const sectionDepartment = document.getElementById('sectionDepartmentInput').value;
-    const sectionSection = document.getElementById('sectionSectionInput').value;
-    const teacherAlloted = document.getElementById('teacherAllotedInput').value;
-    const studentsEnrolled = document.getElementById('studentsEnrolledInput').value;
+    // Get values from input fields
+    const sectionCodeInput = document.getElementById('sectionCodeInput');
+    const studentsEnrolledInput = document.getElementById('studentsEnrolledInput');
+    const sectionVenueInput = document.getElementById('sectionVenueInput');
+    const sectionTimeslotInput = document.getElementById('sectionTimeslotInput');
 
-    const sectionData = {
-        sectionCode, 
-        sectionName, 
-        sectionDepartment, 
-        sectionSection, 
-        teacherAlloted, 
-        studentsEnrolled 
+    // Validate required fields
+    if (sectionCodeInput.value.trim() === '') {
+        sectionCodeInput.classList.add('is-invalid');
+        return;
+    } else {
+        sectionCodeInput.classList.remove('is-invalid');
     }
-    //Print
-    console.log({sectionCode, sectionName, sectionDepartment, sectionSection, teacherAlloted, studentsEnrolled });
 
+    if (studentsEnrolledInput.value.trim() === '') {
+        studentsEnrolledInput.classList.add('is-invalid');
+        return;
+    } else {
+        studentsEnrolledInput.classList.remove('is-invalid');
+    }
 
-  
+    if (sectionVenueInput.value.trim() === '') {
+        sectionVenueInput.classList.add('is-invalid');
+        return;
+    } else {
+        sectionVenueInput.classList.remove('is-invalid');
+    }
 
-    //--------------------------------------------------------------------------
-        fetch('https://localhost:5000/sections', {
+    if (sectionTimeslotInput.value === 'Timeslot') {
+        sectionTimeslotInput.classList.add('is-invalid');
+        return;
+    } else {
+        sectionTimeslotInput.classList.remove('is-invalid');
+    }
+
+    // Continue with form submission
+    // ... (your existing code)
+
+    // Create sectionData object
+    const sectionData = {
+        sectionCode: sectionCodeInput.value,
+        studentsEnrolled: studentsEnrolledInput.value,
+        teacherAlloted: document.getElementById('teacherAllotedInput').value,
+        sectionVenue: sectionVenueInput.value,
+        sectionTimeslot: sectionTimeslotInput.value,
+    };
+
+    // Print data
+    console.log(sectionData);
+
+    // Fetch POST request
+    fetch('https://localhost:5000/sections', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ sectionData })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Data sent successfully:', data);
-        })
-        .catch(error => {
-            console.error('Error sending data:', error);
-        });
+        body: JSON.stringify(sectionData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Data sent successfully:', data);
+    })
+    .catch(error => {
+        console.error('Error sending data:', error);
+    });
 
-        //ADD data to section table
-        AddToTable(sectionData);
+    // Add data to section table
+    addToTable(sectionData);
 
+    // Clear input fields after successful submission
+    sectionCodeInput.value = '';
+    studentsEnrolledInput.value = '';
+    // ... (clear other fields as needed)
 });
 
-function AddToTable(sectionData) 
-{
-    // Call table body
+function addToTable(sectionData) {
+    // Get table body
     const tableBody = $('#sectionTableBody');
 
     // Create a new row
     const newRow = $('<tr>');
 
     // Cell data for each
-    const codeField = $('<td>');
-    const nameField = $('<td>');
-    const deptField = $('<td>');
-    const sectionField = $('<td>');
-    const allotedField = $('<td>');
-    const enrolledField = $('<td>');
-
-    // Populate cells with content
-    codeField.text(sectionData.sectionCode);
-    nameField.text(sectionData.sectionName);
-    deptField.text(sectionData.sectionDepartment);
-    sectionField.text(sectionData.sectionSection);
-    allotedField.text(sectionData.teacherAlloted);
-    enrolledField.text(sectionData.studentsEnrolled);
+    const codeField = $('<td>').text(sectionData.sectionCode);
+    const enrolledField = $('<td>').text(sectionData.studentsEnrolled);
+    const allotedField = $('<td>').text(sectionData.teacherAlloted);
+    const venueField = $('<td>').text(sectionData.sectionVenue);
+    const timeslotField = $('<td>').text(sectionData.sectionTimeslot);
 
     // Append cells to the new row
-    newRow.append(codeField, nameField, deptField, sectionField, allotedField, enrolledField);
-
+    newRow.append(codeField, enrolledField, allotedField, venueField, timeslotField);
+    
     // Append the new row to the table
     tableBody.append(newRow);
-
 }
+
+
+// double click any row for easy updt/dlt
+$(document).on('dblclick', '#sectionTable tbody tr', function() 
+{
+    // Get the values from the clicked row
+    const sectionCode = $(this).find('td:eq(0)').text();
+    const studentEnrolled = $(this).find('td:eq(1)').text();
+    const teacherAlloted = $(this).find('td:eq(2)').text();
+    const venue = $(this).find('td:eq(3)').text();
+    const timeSlot = $(this).find('td:eq(4)').text();
+    
+    
+    // Set the values in the update section
+    $('#sectionCodeUpdate').val(sectionCode);
+    $('#studentsEnrolledUpdate').val(studentEnrolled);
+    $('#teacherAllotedUpdate').val(teacherAlloted);
+    $('#sectionVenueUpdate').val(venue);
+    $('#sectionTimeslotUpdate').find('option:contains("' + timeSlot + '")').prop('selected', true); //if child is found then make it true
+    
+    
+
+    // Set the values in the delete section
+    $('#sectionCodeDelete').val(sectionCode);
+
+    // Trigger the update
+    $('#sectionUpdateButton').click();
+});
+
+function clearFormFields() {
+    // Clear Add section fields
+    $('#sectionCodeInput, #studentsEnrolledInput, #teacherAllotedInput, #sectionVenueInput')
+        .val('')
+        .removeClass('is-invalid');
+    $('#sectionTimeslotInput')
+    .val('Timeslot')
+    .removeClass('is-invalid');
+
+    // Clear Update section fields
+    $('#sectionCodeUpdate, #studentsEnrolledUpdate, #teacherAllotedUpdate, #sectionVenueUpdate')
+        .val('')
+        .removeClass('is-invalid');
+    $('#sectionTimeslotUpdate')
+    .val('Timeslot')
+    .removeClass('is-invalid');
+
+    // Clear Delete section fields
+    $('#sectionCodeDelete')
+        .val('')
+        .removeClass('is-invalid');
+
+    
+}
+
+//Call this function when any of the buttons is pressed
+$('#addButton, #updateButton, #deleteButton').click(clearFormFields);
+
+
 
 //BOOTSTRAP 4
 // $(document).ready(function() 

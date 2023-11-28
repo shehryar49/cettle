@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Link to Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="sidenavbar.css">
     <link rel="stylesheet" href="index.css">
@@ -48,7 +48,7 @@
                 <li><a href="departments.html">Departments</a></li>
                 <li><a href="section.html">Sections</a></li>
             </ul>
-        <span>
+            <span>
     </div>
     <!-- ================================================== -->
     <!--************-->
@@ -75,43 +75,56 @@
 
     <!--************-->
 
-    <!-- The Form Feilds for Add section -->
-    <div class="collapse collapse-sm" id="inputFields">
-        <label for="sectionInfoInput">section Info:</label>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="sectionCodeInput" name="sectionCodeInput"
-                    placeholder="Code (eg MT4001)*" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionNameInput" name="sectionNameInput"
-                    placeholder="section Name*" required>
-            </div>
+    <!-- The Form Fields for Add section -->
+<div class="collapse collapse-sm" id="inputFields">
+    <label for="sectionInfoInput">Section Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="sectionCodeInput" name="sectionCodeInput"
+                placeholder="Code (e.g., BCS-5E)*" required>
+            <div class="invalid-feedback">Please enter a code.</div>
         </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionDepartmentInput" name="sectionDepartmentInput"
-                    placeholder="Dept* (eg. BCS)" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionectionInput" name="sectionectionInput"
-                    placeholder="Section* (eg. 4J)" required>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="teacherAllotedInput">Instructor Alloted:</label>
-            <input type="text" class="form-control" id="teacherAllotedInput" name="teacherAllotedInput">
-        </div>
-
-
-        <div class="form-group">
-            <label for="studentsEnrolledInput lg">Number of Students Enrolled:</label>
-            <input type="text" class="form-control" id="studentsEnrolledInput" name="studentsEnrolledInput">
-        </div>
-        <!-- Button to Add section -->
-        <button class="btn btn-success" type="button" id="addButton">Add</button>
     </div>
+    <div class="form-row">
+        <label for="studentsEnrolledInput lg">Number of Students Enrolled:</label>
+        <input type="text" class="form-control" id="studentsEnrolledInput" name="studentsEnrolledInput"
+            placeholder="(e.g., 45)*" required>
+        <div class="invalid-feedback">Please enter the number of students enrolled.</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="teacherAllotedInput">Instructor Allotted:</label>
+            <input type="text" class="form-control" id="teacherAllotedInput" name="teacherAllotedInput"
+                placeholder="e.g., M5001">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group form-floating">
+            <input type="text" class="form-control" id="sectionVenueInput" name="sectionVenueInput"
+                placeholder="Section* (e.g., CS-5)" required>
+            <label for="sectionVenueInput">Venue (e.g., CS-5)*</label>
+            <div class="invalid-feedback">Please enter a section venue.</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div>
+            <select class="form-select" id="sectionTimeslotInput" aria-label="Time Slots*" required>
+                <option selected disabled>Timeslot</option>
+                <option value="1">8:30 - 9:50</option>
+                <option value="2">10:00 - 11:20</option>
+                <option value="3">11:30 - 12:50</option>
+                <option value="4">1:00 - 2:20</option>
+                <option value="5">2:30 - 3:50</option>
+                <option value="6">4:00 - 5:20</option>
+                <option value="7">5:30 - 6:50</option>
+                <option value="8">7:00 - 8:20</option>
+            </select>
+            <div class="invalid-feedback">Please select a timeslot.</div>
+        </div>
+    </div>
+    <!-- Button to Add section -->
+    <button class="btn btn-success" type="button" id="addButton">Add</button>
+</div>
 
     <!-- ***************************************************** -->
 
@@ -119,41 +132,52 @@
 
 
     <!-- The Form Fields for Update section -->
-    <div class="collapse collapse-sm" id="updateFields">
-        <label for="sectionInfoUpdate">section Info:</label>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="sectionCodeUpdate" name="sectionCodeUpdate"
-                    placeholder="Code (eg MT4001)*" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionNameUpdate" name="sectionNameUpdate"
-                    placeholder="section Name*" required>
-            </div>
+    <!-- The Form Fields for Update section -->
+<div class="collapse collapse-sm" id="updateFields">
+    <label for="sectionInfoUpdate">Update Section Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="sectionCodeUpdate" name="sectionCodeUpdate"
+                placeholder="Code (e.g., MT4001)" required>
         </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionDepartmentUpdate" name="sectionDepartmentUpdate"
-                    placeholder="Dept* (eg. BCS)" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionectionUpdate" name="sectionectionUpdate"
-                    placeholder="Section* (eg. 4J)" required>
-            </div>
-        </div>
-
+    </div>
+    <div class="form-row">
+        <label for="studentsEnrolledUpdate lg">Number of Students Enrolled:</label>
+        <input type="text" class="form-control" id="studentsEnrolledUpdate" name="studentsEnrolledUpdate"
+            placeholder="(e.g., 45)">
+    </div>
+    <div class="form-row">
         <div class="form-group">
-            <label for="teacherAllotedUpdate">Instructor Alloted:</label>
+            <label for="teacherAllotedUpdate">Instructor Allotted:</label>
             <input type="text" class="form-control" id="teacherAllotedUpdate" name="teacherAllotedUpdate">
         </div>
-
-        <div class="form-group">
-            <label for="studentsEnrolledUpdate">Number of Students Enrolled:</label>
-            <input type="text" class="form-control" id="studentsEnrolledUpdate" name="studentsEnrolledUpdate">
-        </div>
-        <!-- Button to Update section -->
-        <button class="btn btn-warning" type="button" id="updateButton">Update</button>
     </div>
+    <div class="form-row">
+        <div class="form-group form-floating">
+            <input type="text" class="form-control" id="sectionVenueUpdate" name="sectionVenueUpdate"
+                placeholder="Section (e.g., CS-5)" required>
+            <label for="sectionVenueUpdate">Venue (e.g., CS-5)*</label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div>
+            <select class="form-select" id="sectionTimeslotUpdate" aria-label="Time Slots*" required>
+                <option selected disabled>Timeslot</option>
+                <option value="1">8:30 - 9:50</option>
+                <option value="2">10:00 - 11:20</option>
+                <option value="3">11:30 - 12:50</option>
+                <option value="4">1:00 - 2:20</option>
+                <option value="5">2:30 - 3:50</option>
+                <option value="6">4:00 - 5:20</option>
+                <option value="7">5:30 - 6:50</option>
+                <option value="8">7:00 - 8:20</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Button to Update section -->
+    <button class="btn btn-warning" type="button" id="updateButton">Update</button>
+</div>
     <!--******************************-->
 
     <!-- ***************************************************** -->
@@ -162,63 +186,40 @@
 
 
     <!-- The Form Fields for DELETE section -->
-    <div class="collapse collapse-sm" id="deleteFields">
-        <label for="sectionInfoDelete">section Info:</label>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="sectionCodeDelete" name="sectionCodeDelete"
-                    placeholder="Code (eg MT4001)*" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionNameDelete" name="sectionNameDelete"
-                    placeholder="section Name*" required>
-            </div>
+    <!-- The Form Fields for DELETE section -->
+<div class="collapse collapse-sm" id="deleteFields">
+    <label for="sectionInfoDelete">section Info:</label>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="sectionCodeDelete" name="sectionCodeDelete"
+                placeholder="Code (e.g., MT4001)*" required>
         </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionDepartmentDelete" name="sectionDepartmentDelete"
-                    placeholder="Dept* (eg. BCS)" required>
-            </div>
-            <div class="form-group col">
-                <input type="text" class="form-control" id="sectionectionDelete" name="sectionectionDelete"
-                    placeholder="Section* (eg. 4J)" required>
-            </div>      
-        </div>
-
-        <div class="form-group">
-            <label for="teacherAllotedDelete">Instructor Alloted:</label>
-            <input type="text" class="form-control" id="teacherAllotedDelete" name="teacherAllotedDelete">
-        </div>
-
-        <div class="form-group">
-            <label for="studentsEnrolledDelete">Number of Students Enrolled:</label>
-            <input type="text" class="form-control" id="studentsEnrolledDelete" name="studentsEnrolledDelete">
-        </div>
-        <!-- Button to Update section -->
-        <button class="btn btn-danger" type="button" id="deleteButton">Delete</button>
     </div>
+    <!-- Button to Update section -->
+    <button class="btn btn-danger" type="button" id="deleteButton">Delete</button>
+</div>
+<!--******************************-->
+
     <!--******************************-->
 
     <!--*************** TABLE FOR SHOWING ***********************-->
-    <div class="col-12 mt-3">
-        <!-- Table for Department Fields -->
-        <table class="table table-hover table-bordered border-dark ">
-            <thead class="table-dark">
-                <tr>
-                    <th>Code</th>
-                    <th>section Name</th>
-                    <th>Dept</th>
-                    <th>Section</th>
-                    <th>Instructor Name</th>
-                    <th>#Enrolled</th>
-                </tr>
-            </thead>
-            <tbody id="sectionTableBody">
-                <!-- Data from input fields -->
-            </tbody>
-        </table>
-
-    </div>
+<div class="col-12 mt-3">
+    <!-- Table for Department Fields -->
+    <table class="table table-hover table-bordered border-dark " id="sectionTable">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>#Enrolled</th>
+                <th>Instructor Allotted</th>
+                <th>Venue</th>
+                <th>Time Slot</th>
+            </tr>
+        </thead>
+        <tbody id="sectionTableBody" class="bg-light">
+            <!-- Data from input fields will be populated here dynamically -->
+        </tbody>
+    </table>
+</div>
 
 
     <!--************-->
@@ -239,7 +240,9 @@
 
 
     <!--Bootstrap 5 INIT JavaScript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 
     <script src="index.js"></script>
