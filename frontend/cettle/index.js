@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//Particles
+// particlesJS.load('particles-js', 'particles.json', function() {
+//     console.log('callback - particles.js config loaded');
+//   });
 
 
 // document.addEventListener("click", function (event) /* Add event for whole document */

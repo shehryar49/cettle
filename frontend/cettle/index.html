@@ -1,55 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cettle - Homepage</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!--All pages share background from Index-->
     <link rel="stylesheet" href="index.css">
+
+    <!--For all the components Overlaid on Particles-->
+    <link rel="stylesheet" href="particles.css">
+
+    <!--All Pages share NavBar-->
     <link rel="stylesheet" href="sidenavbar.css">
+
     <script src="index.js"></script>
 </head>
+
 <body>
 
-<!-- Navbar with Sidebar Toggle -->
-<nav id ="nav_main_features" class="navbar navbar-expand-lg navbar-light bg-light"><!--nav bar to nav to main features-->
-    <!--Sidebar TButton FIRST-->
-    <button id="sidebar-toggler" class="navbar-toggler" type="button" data-target="#sidebar">
-        <i class="navbar-toggler-icon" id="navicon"></i> 
-    </button>
-    <!-- then CETTLE -->
-    <a class="navbar-brand ml-auto" href="#" style="font-size: 22px;">CETTLE</a>
+    <!-- Navbar with Sidebar Toggle -->
+    <nav id="nav_main_features" class="navbar navbar-expand-lg navbar-light bg-light">
+        <!--nav bar to nav to main features-->
+        <!--Sidebar TButton FIRST-->
+        <button id="sidebar-toggler" class="navbar-toggler" type="button" data-target="#sidebar">
+            <i class="navbar-toggler-icon" id="navicon"></i>
+        </button>
+        <!-- then CETTLE -->
+        <a class="navbar-brand ml-auto" href="#" style="font-size: 22px;">CETTLE</a>
+    </nav>
 
-    
-</nav>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar"><!--sidebar-id is sidebar-->
+        <span>
+            <ul>
+                <li><a href="Timetable.html">TimeTable</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="section.html">Sections</a></li>
+            </ul>
+        </span>
+    </div>
 
-<!-- Sidebar -->
-<div id="sidebar" class="sidebar"><!--sidebar-id is sidebar-->
-    <span>
-    <ul>
-        <li><a href="Timetable.html">TimeTable</a></li>
-        <li><a href="instructors.html">Instructors</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="departments.html">Departments</a></li>
-        <li><a href="section.html">Sections</a></li>
+
+<!-- Particles -->
+    <div id="particles-js">
+        <div class="jumbotron text-center overlay mx-auto my-auto">
+            <h1 class="display-4">Let's CETTLE</h1>
+            <p class="lead">With an Intelligent Scheduling Option</p>
+        </div>
         
-    </ul>
-    <span>
-</div>
+    </div>
+    
+    
 
 
-<!-- Empty RN -->
-<div class="jumbotron text-center">
-    <h1>Let's CETTLE</h1>
-    <p>With an Intelligent Scheduling Option</p>
-</div>
+
+    <!-- Empty RN -->
 
 
-<!-- Bootstrap_Init JavaScript-->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- JSParticle Scripts-->
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Bootstrap_Init JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
 </body>
+
 </html>
