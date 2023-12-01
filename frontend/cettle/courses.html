@@ -18,7 +18,7 @@
   }
 </style>
   </head>
-  <body>
+  <body onload="listCourses()">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" style="font-style: italic" href="/cettle">Cettle</a>
@@ -53,8 +53,8 @@
   </div>
 </nav>
     <br><br>
-    <div class="container-fluid">
-      <h3>You can add,view or delete courses here.</h3>
+    <div class="container-fluid" id="main-div">
+      <h3>You can add, view or delete courses here.</h3>
       <br>
       <table class="table table-responsive table-bordered" id="data">
   <thead>

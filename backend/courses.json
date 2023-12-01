@@ -2,12 +2,12 @@
     "courses": [
         {
             "id": "CS2005",
-            "name": "Programming Fundamentals",
+            "name": "PF",
             "department": "CS"
         },
         {
             "id": "CS2006",
-            "name": "Object Oriented Programming",
+            "name": "OOP",
             "department": "CS"
         },
         {
