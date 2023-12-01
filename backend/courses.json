@@ -1,9 +1,24 @@
 {
     "courses": [
-        "PF",
-        "OOP",
-        "COAL",
-        "DSA",
-        "DB"
+        {
+            "id": "CS2005",
+            "name": "Programming Fundamentals",
+            "department": "CS"
+        },
+        {
+            "id": "CS2006",
+            "name": "Object Oriented Programming",
+            "department": "CS"
+        },
+        {
+            "id": "CS2007",
+            "name": "Data Structures",
+            "department": "CS"
+        },
+        {
+            "id": "CS2008",
+            "name": "Theory of Autoamata",
+            "department": "CS"
+        }
     ]
 }
