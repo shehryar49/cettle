@@ -1,26 +1,3 @@
-
-
-document.getElementById('sectionCodeInput')
-.addEventListener('paste', function(e)
-{
-    e.preventDefault(); // stpo default pasting
-
-    // Get Paste string
-    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
-    // Split the pasted content by spaces
-    const halfstring = pastedText.split(' ');
-    // give halfstring to Code and section Name
-    if (halfstring.length >= 1)
-    {
-        document.getElementById('sectionCodeInput').value = halfstring[0];
-    }
-    if (halfstring.length >= 2)
-    {
-        document.getElementById('sectionNameInput').value = halfstring.slice(1).join(' ');
-    }
-});
-
-
 $(document).ready(function() {
     $('#sectionAddButton').click(function() {
         toggleCollapse('#inputFields');
@@ -83,10 +60,7 @@ document.getElementById('addButton').addEventListener('click', function() {
         sectionTimeslotInput.classList.remove('is-invalid');
     }
 
-    // Continue with form submission
-    // ... (your existing code)
-
-    // Create sectionData object
+    
     const sectionData = {
         sectionCode: sectionCodeInput.value,
         studentsEnrolled: studentsEnrolledInput.value,
@@ -109,6 +83,11 @@ document.getElementById('addButton').addEventListener('click', function() {
     .then(response => response.json())
     .then(data => {
         console.log('Data sent successfully:', data);
+
+        //CLEAR THE INPUT FIELDS
+        clearInputFields();
+        //**********************DO THE SAME FOR UPDATE AND DELETE{if the're valid, Action is performed} */
+
     })
     .catch(error => {
         console.error('Error sending data:', error);
@@ -117,10 +96,7 @@ document.getElementById('addButton').addEventListener('click', function() {
     // Add data to section table
     addToTable(sectionData);
 
-    // Clear input fields after successful submission
-    sectionCodeInput.value = '';
-    studentsEnrolledInput.value = '';
-    // ... (clear other fields as needed)
+    
 });
 
 function addToTable(sectionData) {
@@ -144,11 +120,41 @@ function addToTable(sectionData) {
     tableBody.append(newRow);
 }
 
+function clearInputFields() {
+    //clear Add section fields
+    $('#sectionCodeInput, #studentsEnrolledInput, #teacherAllotedInput, #sectionVenueInput')
+        .val('')
+        .removeClass('is-invalid');
+    
+    $('#sectionTimeslotInput')
+        .val('Timeslot')
+        .removeClass('is-invalid');
+}
+
+function clearUpdateFields() {
+    //Clear Update section fields
+    $('#sectionCodeUpdate, #studentsEnrolledUpdate, #teacherAllotedUpdate, #sectionVenueUpdate')
+        .val('')
+        .removeClass('is-invalid');
+    
+    $('#sectionTimeslotUpdate')
+        .val('Timeslot')
+        .removeClass('is-invalid');
+}
+
+function clearDeleteFields() {
+    //clear Delete section fields
+    $('#sectionCodeDelete')
+        .val('')
+        .removeClass('is-invalid');
+}
+
+
 
 // double click any row for easy updt/dlt
 $(document).on('dblclick', '#sectionTable tbody tr', function() 
 {
-    // Get the values from the clicked row
+    // Get the values from clicked row
     const sectionCode = $(this).find('td:eq(0)').text();
     const studentEnrolled = $(this).find('td:eq(1)').text();
     const teacherAlloted = $(this).find('td:eq(2)').text();
@@ -156,7 +162,7 @@ $(document).on('dblclick', '#sectionTable tbody tr', function()
     const timeSlot = $(this).find('td:eq(4)').text();
     
     
-    // Set the values in the update section
+    // Set the values in update section
     $('#sectionCodeUpdate').val(sectionCode);
     $('#studentsEnrolledUpdate').val(studentEnrolled);
     $('#teacherAllotedUpdate').val(teacherAlloted);
@@ -168,37 +174,10 @@ $(document).on('dblclick', '#sectionTable tbody tr', function()
     // Set the values in the delete section
     $('#sectionCodeDelete').val(sectionCode);
 
-    // Trigger the update
+    // Trigger the Select update BUTTON
     $('#sectionUpdateButton').click();
 });
 
-function clearFormFields() {
-    // Clear Add section fields
-    $('#sectionCodeInput, #studentsEnrolledInput, #teacherAllotedInput, #sectionVenueInput')
-        .val('')
-        .removeClass('is-invalid');
-    $('#sectionTimeslotInput')
-    .val('Timeslot')
-    .removeClass('is-invalid');
-
-    // Clear Update section fields
-    $('#sectionCodeUpdate, #studentsEnrolledUpdate, #teacherAllotedUpdate, #sectionVenueUpdate')
-        .val('')
-        .removeClass('is-invalid');
-    $('#sectionTimeslotUpdate')
-    .val('Timeslot')
-    .removeClass('is-invalid');
-
-    // Clear Delete section fields
-    $('#sectionCodeDelete')
-        .val('')
-        .removeClass('is-invalid');
-
-    
-}
-
-//Call this function when any of the buttons is pressed
-$('#addButton, #updateButton, #deleteButton').click(clearFormFields);
 
 
 
