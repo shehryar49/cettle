@@ -48,7 +48,8 @@ def deleteCourse(id):
     if idx != None:
       del courses["courses"][idx]
       rewrite(courses,"courses.json")
-    return jsonify(courses),200
+      return jsonify(courses),200
+    return jsonify({'msg': 'Course not found'}),404
 # not implementing update course
 # delete and create again
 
@@ -63,14 +64,15 @@ def addVenue():
     venue = request.json
     venues["venues"].append(venue)
     rewrite(venues,"venue.json")
-    return jsonify(venues),200
+    return jsonify({}),200
 @app.route("/venues/<id>",methods=["DELETE"])
 def deleteVenue(id):
     idx = searchObj("id",id,venues["venues"])
     if idx!=None:
       del venues["venues"][idx]
       rewrite(venues,"venues.json")
-    return jsonify(venues),200
+      return jsonify(venues),200
+    return jsonify({'msg': 'Venue not found!'}),404
 
 # not implementing update venue
 # delete and create again
@@ -85,15 +87,15 @@ def addInst():
     newInst = request.json
     inst["inst"].append(newInst)
     rewrite(inst,"inst.json")
-    return jsonify(inst),200
+    return jsonify({}),200
 @app.route("/inst/<id>",methods=["DELETE"])
 def deleteInst(id):
     idx = searchObj("id",id,inst["inst"])
     if idx!=None:
       del inst["inst"][idx]
       rewrite(inst,"inst.json")
-    return jsonify(inst),200
-
+      return jsonify(inst),200
+    return jsonify({'msg': 'Instructor not found!'}),404
 # not implementing update venue
 # delete and create again
 
@@ -107,7 +109,7 @@ def addSection():
     newSection = request.json
     sections["sections"].append(newSection)
     rewrite(sections,"sections.json")
-    return jsonify(sections),200
+    return jsonify({}),200
 @app.route("/sections/<name>/<cid>",methods=["DELETE"])
 def deleteSection(name,cid):
     idx = None
@@ -119,7 +121,8 @@ def deleteSection(name,cid):
     if idx!=None:
       del sections["sections"][idx]
       rewrite(sections,"sections.json")
-    return jsonify(sections),200
+      return jsonify(sections),200
+    return jsonify({'msg': 'Section not found!'}),404
 # Timetable
 @app.route("/timetable",methods=["GET"])
 def getTimetable():

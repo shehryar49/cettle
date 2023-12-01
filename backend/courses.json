@@ -1,24 +1,14 @@
 {
     "courses": [
         {
-            "id": "CS2005",
-            "name": "PF",
-            "department": "CS"
-        },
-        {
             "id": "CS2006",
             "name": "OOP",
             "department": "CS"
         },
         {
-            "id": "CS2007",
-            "name": "Data Structures",
-            "department": "CS"
-        },
-        {
-            "id": "CS2008",
-            "name": "Theory of Autoamata",
-            "department": "CS"
+            "id": {},
+            "department": "CS",
+            "name": {}
         }
     ]
 }
