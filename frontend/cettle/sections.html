@@ -7,17 +7,24 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Timetable</title>
-
+    <title>Sections</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="sections.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <style>
   .nav-link:hover
   {
     background-color: white;
     color: black !important;
   }
+  .fa-trash
+  {
+    color: red;
+    cursor: pointer;
+  }
 </style>
   </head>
-  <body>
+  <body onload="listSections()">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" style="font-style: italic" href="/cettle">Cettle</a>
@@ -27,7 +34,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" style="background-color: white;color: black" aria-current="page" href="#">Timetable</a>
+          <a class="nav-link" href="timetable.html">Timetable</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="courses.html">Courses</a>
@@ -37,12 +44,9 @@
        </li>
     
        <li class="nav-item">
-         <a class="nav-link" href="sections.html">Sections</a>
+         <a class="nav-link active" style="background-color: white;color: black" href="sections.html">Sections</a>
        </li>
-  
-       <li class="nav-item">
-         <a class="nav-link" href="depts.html">Departments</a>
-       </li>
+ 
        <li class="nav-item">
          <a class="nav-link" href="venues.html">Venues</a>
        </li>
@@ -51,8 +55,58 @@
     </div>
   </div>
 </nav>
-    <div class="container-fluid">
+    <br><br>
+    <div class="container-fluid" id="main-div">
+      <div id="alerts">
+      </div>
+      <br>
+<div class="accordion" id="accordionExample">
+ <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Add Section
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <input type="text" placeholder="Name" id="sname"><br><br>
+        <label>Course: </label>
+
+	<div>
+	    <datalist id="course-select">
+	    </datalist>
+	    <input  id="course" autoComplete="on" list="course-select"/> 
+	</div>
+        <br>
+        <label>Teacher: </label>
+	<div>
+	    <datalist id="teacher-select">
+	    </datalist>
+	    <input  id="teacher" autoComplete="on" list="teacher-select"/> 
+	</div>
+        <br>
+        <button type="button" onclick="addSection()" class="btn btn-success">Add</button>
+      </div>
     </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        List of all sections
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <table class="table table-responsive table-bordered table-striped" id="data">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+      
+   </div>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

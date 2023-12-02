@@ -3,26 +3,22 @@
         {
             "name": "A",
             "courseID": "CS2005",
-            "instID": "1",
-            "venue": "CS1"
+            "instID": "1"
         },
         {
             "name": "A",
             "courseID": "CS2006",
-            "instID": "1",
-            "venue": "CS1"
+            "instID": "1"
         },
         {
             "name": "A",
             "courseID": "CS2007",
-            "instID": "1",
-            "venue": "CS1"
+            "instID": "1"
         },
         {
             "name": "A",
             "courseID": "CS2008",
-            "instID": "1",
-            "venue": "CS1"
+            "instID": "1"
         }
     ]
 }

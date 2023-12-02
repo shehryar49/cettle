@@ -110,6 +110,11 @@ function addTeacher()
 {
   var id = document.getElementById('tid').value;
   var name = document.getElementById("tname").value;
+  if(id == '' || name == '')
+  {
+    notifyFail("Empty fields not allowed!");
+    return null;
+  }
   var payload = {"id": id,"name": name};
   axios.post(apiHost+"/inst",payload).then(response => {
     

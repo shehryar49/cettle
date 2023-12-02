@@ -114,6 +114,11 @@ function addCourse()
   var id = document.getElementById('cid').value;
   var dept = document.getElementsByTagName("select")[0].value;
   var name = document.getElementById("cname").value;
+  if(id == '' || name == '')
+  {
+    notifyFail("Empty fields not allowed!");
+    return null;
+  }
   var payload = {"id": id,"department": dept,"name": name};
   axios.post(apiHost+"/courses",payload).then(response => {
     
