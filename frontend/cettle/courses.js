@@ -129,7 +129,9 @@ function addCourse()
       tr.children[3].appendChild(document.createElement("i"));
       tr.children[3].children[0].classList.add("fa");
       tr.children[3].children[0].classList.add("fa-trash");
+      tr.children[3].children[0].onclick = deleteCourse;
       tbody.appendChild(tr);
+      notifySuccess("Course added!");
     
   }).catch(function (error){
      if(error.response)

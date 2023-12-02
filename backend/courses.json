@@ -1,14 +1,54 @@
 {
     "courses": [
         {
-            "id": "CS2006",
-            "name": "OOP",
-            "department": "CS"
+            "id": "CS2005",
+            "department": "CS",
+            "name": "PF"
         },
         {
-            "id": {},
+            "id": "CS2006",
             "department": "CS",
-            "name": {}
+            "name": "OOP"
+        },
+        {
+            "id": "CS2007",
+            "department": "CS",
+            "name": "Data Structures"
+        },
+        {
+            "id": "CS2008",
+            "department": "CS",
+            "name": "TOA"
+        },
+        {
+            "id": "CS2009",
+            "department": "CS",
+            "name": "Deign and Analysis of Algorithms"
+        },
+        {
+            "id": "CS2010",
+            "department": "CS",
+            "name": "Digital Logic Design"
+        },
+        {
+            "id": "CS2011",
+            "department": "CS",
+            "name": "Discrete Structures"
+        },
+        {
+            "id": "CS2013",
+            "department": "CS",
+            "name": "PF-Lab"
+        },
+        {
+            "id": "CS2014",
+            "department": "CS",
+            "name": "OOP-Lab"
+        },
+        {
+            "id": "CS2015",
+            "department": "CS",
+            "name": "SDA"
         }
     ]
 }

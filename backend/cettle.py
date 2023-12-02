@@ -39,9 +39,12 @@ def listCourses():
 @app.route("/courses",methods=["POST"])
 def addCourse():
     course = request.json
+    idx = searchObj("id",course["id"],courses["courses"])
+    if idx != None:
+      return jsonify({'msg': 'A course exists with same id!'}),409
     courses["courses"].append(course)
     rewrite(courses,"courses.json")
-    return jsonify(courses),200
+    return jsonify({'msg': 'Course added!'}),200
 @app.route("/courses/<id>",methods=["DELETE"])
 def deleteCourse(id):
     idx = searchObj("id",id,courses["courses"])
@@ -49,7 +52,7 @@ def deleteCourse(id):
       del courses["courses"][idx]
       rewrite(courses,"courses.json")
       return jsonify(courses),200
-    return jsonify({'msg': 'Course not found'}),404
+    return jsonify({'msg': 'Course not found!'}),404
 # not implementing update course
 # delete and create again
 
@@ -62,9 +65,12 @@ def listVenues():
 @app.route("/venues",methods=["POST"])
 def addVenue():
     venue = request.json
+    idx = searchObj("id",venue["id"],venues["venues"])
+    if idx!=None:
+      return jsonify({'msg': 'A venue with same id already exists!'}),409
     venues["venues"].append(venue)
     rewrite(venues,"venue.json")
-    return jsonify({}),200
+    return jsonify({'msg': 'Venue added!'}),200
 @app.route("/venues/<id>",methods=["DELETE"])
 def deleteVenue(id):
     idx = searchObj("id",id,venues["venues"])
@@ -85,9 +91,12 @@ def listInst():
 @app.route("/inst",methods=["POST"])
 def addInst():
     newInst = request.json
+    idx = searchObj("id",newInst["id"],inst["inst"])
+    if idx!=None:
+      return jsonify({'msg': 'A teacher with same id already exists!'}),409
     inst["inst"].append(newInst)
     rewrite(inst,"inst.json")
-    return jsonify({}),200
+    return jsonify({'msg': 'Instructor added!'}),200
 @app.route("/inst/<id>",methods=["DELETE"])
 def deleteInst(id):
     idx = searchObj("id",id,inst["inst"])
@@ -109,7 +118,7 @@ def addSection():
     newSection = request.json
     sections["sections"].append(newSection)
     rewrite(sections,"sections.json")
-    return jsonify({}),200
+    return jsonify({'msg': 'Section added!'}),200
 @app.route("/sections/<name>/<cid>",methods=["DELETE"])
 def deleteSection(name,cid):
     idx = None
