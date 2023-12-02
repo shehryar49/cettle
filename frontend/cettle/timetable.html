@@ -8,16 +8,21 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Timetable</title>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="timetable.js"></script>
   <style>
   .nav-link:hover
   {
     background-color: white;
     color: black !important;
   }
+  #tt
+  {
+    font-size: 14px;
+  }
 </style>
   </head>
-  <body>
+  <body onload="loadTT()">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" style="font-style: italic" href="/cettle">Cettle</a>
@@ -27,7 +32,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" style="background-color: white;color: black" aria-current="page" href="#">Timetable</a>
+          <a class="nav-link active" style="background-color: white;color: black" aria-current="page" href="timetable.html">Timetable</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="courses.html">Courses</a>
@@ -41,9 +46,6 @@
        </li>
   
        <li class="nav-item">
-         <a class="nav-link" href="depts.html">Departments</a>
-       </li>
-       <li class="nav-item">
          <a class="nav-link" href="venues.html">Venues</a>
        </li>
 
@@ -52,6 +54,41 @@
   </div>
 </nav>
     <div class="container-fluid">
+    <br>
+    <br>
+    <select onchange="loadTT()" id="dept-select">
+      <option value="CS">CS</option>
+      <option value="SE">SE</option>
+      <option value="EE">EE</option>
+      <option value="CV">CV</option>
+      <option value="MG">MG</option>
+    </select>
+    <select id="day-select">
+      <option value="monday">Monday</option>
+      <option value="tuesday">Tuesday</option>
+      <option value="wednesday">Wednesday</option>
+      <option value="thursday">Thursday</option>
+      <option value="friday">Friday</option>
+      <option value="saturday">Saturday</option>
+    </select>
+    <br><br>
+    <table id="tt" class="table table-responsive table-bordered table-striped">
+      <thead>
+        <tr>
+        <td>Venue</td>
+        <td>8:30</td>
+        <td>9:50</td>
+        <td>10:00</td>
+        <td>11:30</td>
+        <td>1:00</td>
+        <td>2:30</td>
+        <td>4:00</td>
+         <td>5:30</td>
+         <td>7:00</td>
+ 
+       </tr>
+      </thead>
+    </table>
     </div>
     
 

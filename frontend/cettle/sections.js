@@ -158,7 +158,7 @@ function addSection()
     notifyFail("Empty fields not allowed!");
     return null;
   }
-  var payload = {"courseID": cid,"teacherID": tid,"name": name};
+  var payload = {"courseID": cid,"instID": tid,"name": name};
   axios.post(apiHost+"/sections",payload).then(response => {
     
       var tbody = document.getElementsByTagName("tbody")[0];
