@@ -69,7 +69,7 @@ def addVenue():
     if idx!=None:
       return jsonify({'msg': 'A venue with same id already exists!'}),409
     venues["venues"].append(venue)
-    rewrite(venues,"venue.json")
+    rewrite(venues,"venues.json")
     return jsonify({'msg': 'Venue added!'}),200
 @app.route("/venues/<id>",methods=["DELETE"])
 def deleteVenue(id):
@@ -116,6 +116,15 @@ def listSections():
 @app.route("/sections",methods=["POST"])
 def addSection():
     newSection = request.json
+    idx = None
+    secList = sections["sections"]
+    for i in range(len(secList)):
+        print(secList[i]["courseID"])
+        if secList[i]["name"] == newSection["name"] and secList[i]["courseID"] == newSection["courseID"]:
+            idx = i
+            break
+    if idx!=None:
+      return jsonify({'msg': 'Section of same course already exists!'}),409
     sections["sections"].append(newSection)
     rewrite(sections,"sections.json")
     return jsonify({'msg': 'Section added!'}),200
@@ -130,7 +139,7 @@ def deleteSection(name,cid):
     if idx!=None:
       del sections["sections"][idx]
       rewrite(sections,"sections.json")
-      return jsonify(sections),200
+      return jsonify({}),200
     return jsonify({'msg': 'Section not found!'}),404
 # Timetable
 @app.route("/timetable",methods=["GET"])

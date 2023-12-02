@@ -1,40 +1,154 @@
 {
-    "venues": 
-    [
-        {"id": "CS1","dept": "CS","seats": 40},
-    {"id": "CS2","dept": "CS","seats": 40},
-    {"id": "CS3","dept": "CS","seats": 40},
-    {"id": "CS4","dept": "CS","seats": 40},
-    {"id": "CS5","dept": "CS","seats": 40},
-    {"id": "CS6","dept": "CS","seats": 40},
-    {"id": "CS7","dept": "CS","seats": 40},
-    {"id": "CS8","dept": "CS","seats": 40},
-    {"id": "CS9","dept": "CS","seats": 40},
-    {"id": "CS10","dept": "CS","seats": 40},
-    {"id": "CS11","dept": "CS","seats": 40},
-    {"id": "CS15","dept": "CS","seats": 40},
-    {"id": "CS16","dept": "CS","seats": 40},
-    {"id": "EM1","dept": "EE","seats": 40},
-    {"id": "EM2","dept": "EE","seats": 40},
-    {"id": "EM3","dept": "EE","seats": 40},
-    {"id": "EM4","dept": "EE","seats": 40},
-    {"id": "EM5","dept": "EE","seats": 40},
-    {"id": "EM11","dept": "EE","seats": 40},
-    {"id": "EM16","dept": "EE","seats": 40},
-    {"id": "CE1","dept": "CE","seats": 40},
-    {"id": "CE2","dept": "CE","seats": 40},
-    {"id": "CE3","dept": "CE","seats": 40},
-    {"id": "English Lab-1","dept": "CS","seats": 40},
-    {"id": "English Lab-2","dept": "CS","seats": 40},
-    {"id": "English Lab-3","dept": "CS","seats": 40},
-    {"id": "English Lab-4","dept": "CS","seats": 40},
-    {"id": "Lab(CS1)","dept": "CS","seats": 40},
-    {"id": "Lab(CS2A)","dept": "CS","seats": 40},
-    {"id": "Lab(CS2B)","dept": "CS","seats": 40},
-    {"id": "Lab(CS3)","dept": "CS","seats": 40},
-    {"id": "Lab(CS4)","dept": "CS","seats": 40},
-    {"id": "Lab(CS6)","dept": "CS","seats": 40},
-    {"id": "Lab(CS8)","dept": "CS","seats": 40},
-    {"id": "Lab(CS9)","dept": "CS","seats": 40}
+    "venues": [
+        {
+            "id": "CS3",
+            "seats": 40
+        },
+        {
+            "id": "CS4",
+            "seats": 40
+        },
+        {
+            "id": "CS5",
+            "seats": 40
+        },
+        {
+            "id": "CS6",
+            "seats": 40
+        },
+        {
+            "id": "CS7",
+            "seats": 40
+        },
+        {
+            "id": "CS8",
+            "seats": 40
+        },
+        {
+            "id": "CS9",
+            "seats": 40
+        },
+        {
+            "id": "CS10",
+            "seats": 40
+        },
+        {
+            "id": "CS11",
+            "seats": 40
+        },
+        {
+            "id": "CS15",
+            "seats": 40
+        },
+        {
+            "id": "CS16",
+            "seats": 40
+        },
+        {
+            "id": "EM1",
+            "dept": "EE",
+            "seats": 40
+        },
+        {
+            "id": "EM2",
+            "dept": "EE",
+            "seats": 40
+        },
+        {
+            "id": "EM3",
+            "dept": "EE",
+            "seats": 40
+        },
+        {
+            "id": "EM4",
+            "dept": "EE",
+            "seats": 40
+        },
+        {
+            "id": "EM5",
+            "dept": "EE",
+            "seats": 40
+        },
+        {
+            "id": "EM11",
+            "dept": "EE",
+            "seats": 40
+        },
+        {
+            "id": "EM16",
+            "dept": "EE",
+            "seats": 40
+        },
+        {
+            "id": "CE1",
+            "dept": "CE",
+            "seats": 40
+        },
+        {
+            "id": "CE2",
+            "dept": "CE",
+            "seats": 40
+        },
+        {
+            "id": "CE3",
+            "dept": "CE",
+            "seats": 40
+        },
+        {
+            "id": "English Lab-1",
+            "seats": 40
+        },
+        {
+            "id": "English Lab-2",
+            "seats": 40
+        },
+        {
+            "id": "English Lab-3",
+            "seats": 40
+        },
+        {
+            "id": "English Lab-4",
+            "seats": 40
+        },
+        {
+            "id": "Lab(CS1)",
+            "seats": 40
+        },
+        {
+            "id": "Lab(CS2A)",
+            "seats": 40
+        },
+        {
+            "id": "Lab(CS2B)",
+            "seats": 40
+        },
+        {
+            "id": "Lab(CS3)",
+            "seats": 40
+        },
+        {
+            "id": "Lab(CS4)",
+            "seats": 40
+        },
+        {
+            "id": "Lab(CS6)",
+            "seats": 40
+        },
+        {
+            "id": "Lab(CS8)",
+            "seats": 40
+        },
+        {
+            "id": "Lab(CS9)",
+            "seats": 40
+        },
+        {
+            "id": "CS2",
+            "seats": "40"
+        },
+        {
+            "id": "CS1",
+            "seats": "40"
+        }
     ]
 }

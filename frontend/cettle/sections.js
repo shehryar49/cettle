@@ -35,20 +35,21 @@ function notifyFail(msg)
 function deleteSection()
 {
   var tr = this.parentElement.parentElement;
-  var id = tr.children[0].innerHTML;
-  axios.delete(apiHost+"/inst/"+id).then(response => {
+  var name = tr.children[0].innerHTML;
+  var cid = tr.children[1].innerHTML;
+  axios.delete(apiHost+"/sections/"+name+"/"+cid).then(response => {
     
       var i = 0;
-      for(;i<teachers.length;i++)
+      for(;i<sections.length;i++)
       {
-        if(teachers[i].id == id)
+        if(sections[i].name == name && sections[i].courseID == cid)
           break;
       }
-      if(i != teachers.length)
-        teachers.splice(i,i);
+      if(i != sections.length)
+        sections.splice(i,i);
       var table = tr.parentElement;
       table.removeChild(tr);
-      notifySuccess("Teacher deleted!");
+      notifySuccess("Section deleted!");
   
 
   }).catch(function (error){
@@ -148,29 +149,34 @@ function listSections()
 }
 function addSection()
 {
-  var id = document.getElementById('tid').value;
-  var name = document.getElementById("tname").value;
-  if(id == '' || name == '')
+  var tid = document.getElementById('teacher').value;
+  var cid = document.getElementById('course').value;
+  
+  var name = document.getElementById("sname").value;
+  if(tid == '' || cid == '' || name == '')
   {
     notifyFail("Empty fields not allowed!");
     return null;
   }
-  var payload = {"id": id,"name": name};
-  axios.post(apiHost+"/inst",payload).then(response => {
+  var payload = {"courseID": cid,"teacherID": tid,"name": name};
+  axios.post(apiHost+"/sections",payload).then(response => {
     
       var tbody = document.getElementsByTagName("tbody")[0];
       var tr = document.createElement("tr");
       tr.appendChild(document.createElement("td"));
       tr.appendChild(document.createElement("td"));
       tr.appendChild(document.createElement("td"));
-      tr.children[0].innerHTML = id;
-      tr.children[1].innerHTML = name;
-      tr.children[2].appendChild(document.createElement("i"));
-      tr.children[2].children[0].classList.add("fa");
-      tr.children[2].children[0].classList.add("fa-trash");
-      tr.children[2].children[0].onclick = deleteTeacher;
+      tr.appendChild(document.createElement("td"));
+
+      tr.children[0].innerHTML = name;
+      tr.children[1].innerHTML = cid;
+      tr.children[2].innerHTML = tid;
+      tr.children[3].appendChild(document.createElement("i"));
+      tr.children[3].children[0].classList.add("fa");
+      tr.children[3].children[0].classList.add("fa-trash");
+      tr.children[3].children[0].onclick = deleteSection;
       tbody.appendChild(tr);
-      notifySuccess("Teacher added!");
+      notifySuccess("Section added!");
     
   }).catch(function (error){
      if(error.response)
