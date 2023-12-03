@@ -1,0 +1,35 @@
+	BS(SE)-2021:
+					
+CS2006	Operating Systems			BSE-5A	Mr. Mubasher Hussain		3	BS (SE)	CS (Core)
+CS2006	Operating Systems			BSE-5B	Ms. Rubab Anum			3	BS (SE)	CS (Core)
+
+SE3001	Software Construction Development 	BSE-5A	Dr. Farooq Ahmad		3	BS (SE)	SE (Core)
+SE3001	Software Construction Development 	BSE-5B	Ms. Anosha Khan			3	BS (SE)	SE (Core)
+
+SE3002	Software Quality Engineering		BSE-5A	Dr. Zeeshan Ali Rana		3	BS (SE)	SE (Core)
+SE3002	Software Quality Engineering		BSE-5B	Mr. Arifullah Khan		3	BS (SE)	SE (Core)
+SE3002	Software Quality Engineering		BSE-5C	Dr. Zeeshan Ali Rana (VF)	3	BS (SE)	SE (Core)
+
+MT4031	Operations Research			BSE-5A	Dr. Hakeem Ur Rehman (VF)	3	BS (SE)	Supporting Elective
+MT4031	Operations Research			BSE-5B	Dr. Hakeem Ur Rehman (VF)	3	BS (SE)	Supporting Elective
+MT4031	Operations Research			BSE-5C	Mr. Amjad Ali (VF)		3	BS (SE)	Supporting Elective
+
+SS2007	Technical and Business Writing		BSE-5A					3	BS (SE)	HSS (Core) 
+SS2007	Technical and Business Writing		BSE-5B					3	BS (SE)	HSS (Core) 
+SS2007	Technical and Business Writing		BSE-5C					3	BS (SE)	HSS (Core) 
+
+SL3001	Software Construction Development Lab	BSE-5A1		1	BS (SE)	SE (Core)
+SL3001	Software Construction Development Lab	BSE-5A2		1	BS (SE)	SE (Core)
+SL3001	Software Construction Development Lab	BSE-5B1		1	BS (SE)	SE (Core)
+SL3001	Software Construction Development Lab	BSE-5B2		1	BS (SE)	SE (Core)
+
+CL2006	Operating Systems Lab			BSE-5A1		1	BS (SE)	CS (Core)
+CL2006	Operating Systems Lab			BSE-5A2		1	BS (SE)	CS (Core)
+CL2006	Operating Systems Lab			BSE-5B1		1	BS (SE)	CS (Core)
+CL2006	Operating Systems Lab			BSE-5B2		1	BS (SE)	CS (Core)
+	
+Repeat courses:
+				
+CS2005	Database Systems	BSE-5A		Mr. Muhammad Naveed	3	BS (SE)	CS (Core)
+CL2005	Database Systems Lab	BSE-5A1					1	BS (SE)	CS (Core)
+CL2005	Database Systems Lab	BSE-5A2					1	BS (SE)	CS (Core)
