@@ -30,6 +30,12 @@ def searchObj(attr,val,objlist):
         if(objlist[i][attr] == val):
           return i
     return None
+def searchSection(name,cid):
+    idx = None
+    for i in range(len(sections["sections"])):
+      if sections["sections"][i]["name"] == name and sections["sections"][i]["courseID"] == cid:
+        return i
+    return idx
 # Callbacks
 
 # courses
@@ -112,7 +118,24 @@ def deleteInst(id):
 @app.route("/sections",methods=["GET"])
 def listSections():
     return jsonify(sections),200
-
+@app.route("/sections/<dept>",methods=["GET"])
+def getDeptSections(dept):
+    req = []
+    for i in range(len(sections["sections"])):
+      sec = sections["sections"][i]
+      if sec["dept"] == dept:
+        cid = sec["courseID"]
+        idx = None
+        for j in range(len(courses["courses"])):
+          if courses["courses"][j]["id"] == cid:
+            idx = j
+            break
+        if idx == None:
+          req.append({"name": sec["name"],"courseID": cid,"courseName": None,"instID": sec["instID"]})
+        else:
+          req.append({"name": sec["name"],"courseID": cid,"courseName": courses["courses"][idx]["name"],"instID": sec["instID"]})
+    req = {"sections": req}
+    return jsonify(req),200        
 @app.route("/sections",methods=["POST"])
 def addSection():
     newSection = request.json
@@ -145,6 +168,44 @@ def deleteSection(name,cid):
 @app.route("/timetable",methods=["GET"])
 def getTimetable():
   return jsonify(timetable),200
+@app.route("/timetable/schedule",methods=["POST"])
+def scheduleSection():
+  obj = request.json
+  day = obj["day"]
+  sid = obj["sid"]
+  cid = obj["cid"]
+  start = int(obj["start"])
+  end = int(obj["end"])
+  vid = obj["vid"]
+  slots = end - start + 1
+  # check if section can be scheduled
+  # dark magic logic
+  
+  # check if sections scheduled in same slots clash with this new section scheduling  
+  tocheck = timetable[day]
+  i = start
+  tochange = []
+  for j in range(slots):
+      classes = tocheck[i-1]
+      for k in range(len(classes)):
+        sec = classes[i]
+        if sec["venue"] == vid: # Venue Clash!
+           return jsonify({'msg': 'Venue clash!'}),409
+      tochange.append(classes)
+      i+=1
+  # No clash
+  # set section venue to vid
+  # and append it in timetable
+  idx = searchSection(sid,cid)
+  # supposing idx is never none
+  sections["sections"][idx]["venue"] = vid
+  idx = searchObj("id",cid,courses["courses"])
+  for i in range(len(tochange)):
+    tochange[i].append({"name": sid,"courseID": cid,"venue": vid,"courseName": courses["courses"][idx]["name"]})
+  
+  rewrite(sections,"sections.json")
+  rewrite(timetable,"timetable.json")
+  return jsonify({}),200
 ##
 loadData()
 app.run()

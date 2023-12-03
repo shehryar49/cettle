@@ -19,6 +19,7 @@
   #tt
   {
     font-size: 14px;
+    table-layout: fixed;
   }
 </style>
   </head>
@@ -63,7 +64,7 @@
       <option value="CV">CV</option>
       <option value="MG">MG</option>
     </select>
-    <select id="day-select">
+    <select onchange="loadTT()" id="day-select">
       <option value="monday">Monday</option>
       <option value="tuesday">Tuesday</option>
       <option value="wednesday">Wednesday</option>
@@ -72,7 +73,7 @@
       <option value="saturday">Saturday</option>
     </select>
     <br><br>
-    <table id="tt" class="table table-responsive table-bordered table-striped">
+    <table id="tt" class="table table-responsive table-bordered table-striped table-hover thett">
       <thead>
         <tr>
         <td>Venue</td>
@@ -91,6 +92,40 @@
     </table>
     <br><br><br>
     <h3>Schedule a section</h3>
+    <select id="section-select"></select>
+    <br><br>
+    <select id="venue-select"></select>
+    <br><br>
+    <label>Start time</label>
+    <select id="start">
+    <option value="1">8:30</option>
+    <option value="2">10:00</option>
+    <option value="3">11:30</option>
+    <option value="4">1:00</option>
+    <option value="5">2:30</option>
+    <option value="6">4:00</option>
+    <option value="7">5:30</option>
+    <option value="8">7:00</option>
+    </select>
+    
+    <br><br>
+    <label>End time</label>
+        <select id="end">
+    <option value="1">9:50</option>
+    <option value="2">11:20</option>
+    <option value="3">12:50</option>
+    <option value="4">2:20</option>
+    <option value="5">3:50</option>
+    <option value="6">5:20</option>
+    <option value="7">6:50</option>
+    <option value="8">8:20</option>
+    
+    </select>
+    <br><br>
+    <button onclick="scheduleSection()">Schedule</button>
+    <br><br>
+    <button class="btn btn-dark" onclick="exportTT()">Export Dept Timetable</button>
+    <br><BR><BR><BR>
     </div>
     
 
