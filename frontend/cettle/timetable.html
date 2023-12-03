@@ -21,6 +21,13 @@
     font-size: 14px;
     table-layout: fixed;
   }
+  .sidelinks a
+  {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding-right: 30%;
+  }
 </style>
   </head>
   <body onload="loadTT()">
@@ -91,6 +98,18 @@
       </thead>
     </table>
     <br><br><br>
+    <div class="row">
+    <div class="col-3 sidelinks" style="background-color: #212529;color: white">
+      <a href="#">XYZ</a><br>
+      <a href="#">XYZ</a><br>
+      <a href="#">XYZ</a><br>
+      <a href="#">XYZ</a><br>
+      <a href="#">XYZ</a><br>
+      <a href="#">XYZ</a><br>
+      <a href="#">XYZ</a><br>
+      
+    </div>
+    <div class="col" style="background-color: #002D62;color: white">
     <h3>Schedule a section</h3>
     <select id="section-select"></select>
     <br><br>
@@ -125,7 +144,10 @@
     <button onclick="scheduleSection()">Schedule</button>
     <br><br>
     <button class="btn btn-dark" onclick="exportTT()">Export Dept Timetable</button>
+    </div>
+    </div>
     <br><BR><BR><BR>
+    
     </div>
     
 

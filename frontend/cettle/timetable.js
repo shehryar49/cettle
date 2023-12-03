@@ -50,6 +50,7 @@ function loadTT()
   loadSections();
  // return null;
   var day = document.getElementById("day-select").value;
+  var dept = document.getElementById("dept-select").value;
   var table = document.getElementById("tt");
   axios.get(apiHost+"/timetable").then( response => {
     tt = response.data;
@@ -59,11 +60,12 @@ function loadTT()
       var sections = slots[i]; //sections having classes at ith slot
       for(var j=0;j<sections.length;j++)
       {
+      //  alert(sections[j].venue);
         var L = table.children;
         var found = false;
         for(var k=0;k<L.length;k++)
         {
-          if(L[k].children[0].innerHTML == sections[j].venue)
+          if(L[k].children[0].textContent == sections[j].venue)
           {
             L[k].children[i+1].innerHTML = sections[j].courseName+"( "+sections[j].name+")";//+"ok";
             found = true;
@@ -71,7 +73,7 @@ function loadTT()
             
           }
         }
-        if(!found)
+        if(!found && sections[j].dept == dept)
         {
           var tr = document.createElement("tr");
           for(var m=0;m<9;m++)
@@ -126,30 +128,13 @@ function scheduleSection()
     loadTT();
   }).catch(error => {
     if(error.response){
-      alert(error.response.msg);
+//      console.log(error.response);
+      alert(error.response.data.msg);
     }
   });
 }
-function unscheduleSection()
-{
-  var start = document.getElementById("start").value;
-  var end = document.getElementById("end").value;
-  var idx = parseInt(document.getElementById("section-select").value);
-  var sid = sections[idx].name;
-  var venue = document.getElementById("venue-select").value;
-  var cid = sections[idx].courseID;
-  var day = document.getElementById("day-select").value;
-  var payload = {"start": start,"end": end,"sid": sid,"cid": cid,"day": day,"vid": venue};
-  console.log(payload);
-  axios.post(apiHost+"/timetable/schedule",payload).then(response => {
-   // alert("Success");
-    loadTT();
-  }).catch(error => {
-    if(error.response){
-      alert(error.response.msg);
-    }
-  });
-}
+
+
 function exportTT()
 {
 

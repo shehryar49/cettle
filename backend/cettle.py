@@ -188,9 +188,11 @@ def scheduleSection():
   for j in range(slots):
       classes = tocheck[i-1]
       for k in range(len(classes)):
-        sec = classes[i]
+        sec = classes[k]
         if sec["venue"] == vid: # Venue Clash!
            return jsonify({'msg': 'Venue clash!'}),409
+        if sec["name"] == sid: # same section is having a class in the same slot already!
+           return jsonify({'msg': 'The section has class of '+sec["courseName"]+" at that time!"}),409
       tochange.append(classes)
       i+=1
   # No clash
@@ -198,10 +200,10 @@ def scheduleSection():
   # and append it in timetable
   idx = searchSection(sid,cid)
   # supposing idx is never none
-  sections["sections"][idx]["venue"] = vid
+
   idx = searchObj("id",cid,courses["courses"])
   for i in range(len(tochange)):
-    tochange[i].append({"name": sid,"courseID": cid,"venue": vid,"courseName": courses["courses"][idx]["name"]})
+    tochange[i].append({"name": sid,"courseID": cid,"venue": vid,"courseName": courses["courses"][idx]["name"],"dept": sections["sections"][idx]["dept"]})
   
   rewrite(sections,"sections.json")
   rewrite(timetable,"timetable.json")
