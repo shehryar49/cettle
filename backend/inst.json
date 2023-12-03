@@ -2,7 +2,38 @@
     "inst": [
         {
             "id": "1",
-            "name": "Tahir Ejaz"
+            "name": "Dr. Arshad Ali",
+            "dept": "CS"
+        },
+        {
+            "id": "2",
+            "name": "Dr. Zeeshan Nazar",
+            "dept": "CS"
+        },
+        {
+            "id": "3",
+            "name": "Mr. Fraz Yousaf",
+            "dept": "CS"
+        },
+        {
+            "id": "4",
+            "name": "Naima Chaudhry",
+            "dept": "SS"
+        },
+        {
+            "id": "5",
+            "name": "Hira Tayyab",
+            "dept": "CS"
+        },
+        {
+            "id": "6",
+            "name": "Maila Majnu",
+            "dept": "CS"
+        },
+        {
+            "id": "7",
+            "name": "Iqra Yaqoot",
+            "dept": "CS"
         }
     ]
 }

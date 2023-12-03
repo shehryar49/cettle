@@ -1,179 +1,224 @@
 {
     "venues": [
         {
-            "id": "CS4",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-1",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS5",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-2",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS6",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-3",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS7",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-4",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS8",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-5",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS9",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-6",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS10",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-7",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS11",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-8",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS15",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-10",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "CS16",
-            "dept": "CS",
-            "seats": 40
+            "id": "CS-11",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "EM1",
-            "dept": "EE",
-            "seats": 40
+            "id": "CS-12",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "EM2",
-            "dept": "EE",
-            "seats": 40
+            "id": "CS-13",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "EM3",
-            "dept": "EE",
-            "seats": 40
+            "id": "CS-14",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "EM4",
-            "dept": "EE",
-            "seats": 40
+            "id": "CS-15",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "EM5",
-            "dept": "EE",
-            "seats": 40
+            "id": "CS-16",
+            "seats": "40",
+            "dept": "CS"
         },
         {
-            "id": "EM11",
-            "dept": "EE",
-            "seats": 40
+            "id": "E&M-1",
+            "seats": "40",
+            "dept": "EE"
         },
         {
-            "id": "EM16",
-            "dept": "EE",
-            "seats": 40
+            "id": "E&M-2",
+            "seats": "40",
+            "dept": "EE"
         },
         {
-            "id": "CE1",
-            "dept": "CE",
-            "seats": 40
+            "id": "E&M-3",
+            "seats": "40",
+            "dept": "EE"
         },
         {
-            "id": "CE2",
-            "dept": "CE",
-            "seats": 40
+            "id": "E&M-4",
+            "seats": "40",
+            "dept": "EE"
         },
         {
-            "id": "CE3",
-            "dept": "CE",
-            "seats": 40
+            "id": "E&M-5",
+            "seats": "40",
+            "dept": "EE"
+        },
+        {
+            "id": "E&M-11",
+            "seats": "40",
+            "dept": "EE"
+        },
+        {
+            "id": "E&M-16",
+            "seats": "40",
+            "dept": "EE"
+        },
+        {
+            "id": "CE-1",
+            "seats": "40",
+            "dept": "CE"
+        },
+        {
+            "id": "CE-2",
+            "seats": "40",
+            "dept": "CE"
+        },
+        {
+            "id": "CE-3",
+            "seats": "40",
+            "dept": "CE"
         },
         {
             "id": "English Lab-1",
-            "dept": "CS",
-            "seats": 40
+            "seats": "40",
+            "dept": "SHARED"
         },
         {
             "id": "English Lab-2",
-            "dept": "CS",
-            "seats": 40
+            "seats": "40",
+            "dept": "SHARED"
         },
         {
             "id": "English Lab-3",
-            "dept": "CS",
-            "seats": 40
+            "seats": "40",
+            "dept": "SHARED"
         },
         {
             "id": "English Lab-4",
-            "dept": "CS",
-            "seats": 40
+            "seats": "40",
+            "dept": "SHARED"
         },
         {
-            "id": "Lab(CS1)",
-            "dept": "CS",
-            "seats": 40
-        },
-        {
-            "id": "Lab(CS2A)",
-            "dept": "CS",
-            "seats": 40
-        },
-        {
-            "id": "Lab(CS2B)",
-            "dept": "CS",
-            "seats": 40
-        },
-        {
-            "id": "Lab(CS3)",
-            "dept": "CS",
-            "seats": 40
-        },
-        {
-            "id": "Lab(CS4)",
-            "dept": "CS",
-            "seats": 40
-        },
-        {
-            "id": "Lab(CS6)",
-            "dept": "CS",
-            "seats": 40
-        },
-        {
-            "id": "Lab(CS8)",
-            "dept": "CS",
-            "seats": 40
-        },
-        {
-            "id": "Lab(CS9)",
-            "dept": "CS",
-            "seats": 40
-        },
-        {
-            "id": "CS2",
-            "dept": "CS",
-            "seats": "40"
-        },
-        {
-            "id": "CS1",
-            "dept": "CS",
-            "seats": "40"
-        },
-        {
-            "id": "khudda",
-            "seats": "69",
+            "id": "Lab(CS-1)",
+            "seats": "40",
             "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-2A)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-2B)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-3)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-4)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-5)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-6)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-7)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-8)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Lab(CS-9)",
+            "seats": "40",
+            "dept": "CS"
+        },
+        {
+            "id": "Physics Lab",
+            "seats": "40",
+            "dept": "EE"
+        },
+        {
+            "id": "Micro Lab",
+            "seats": "40",
+            "dept": "EE"
+        },
+        {
+            "id": "Seminar Hall",
+            "seats": "80",
+            "dept": "SHARED"
+        },
+        {
+            "id": "Old Audi",
+            "seats": "80",
+            "dept": "SHARED"
+        },
+        {
+            "id": "Library Room",
+            "seats": "40",
+            "dept": "SHARED"
         }
     ]
 }

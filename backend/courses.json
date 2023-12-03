@@ -1,54 +1,64 @@
 {
     "courses": [
         {
-            "id": "CS2005",
+            "id": "CS3001",
             "department": "CS",
-            "name": "PF"
+            "name": "Computer Networks"
         },
         {
-            "id": "CS2006",
+            "id": "CS3005",
             "department": "CS",
-            "name": "OOP"
+            "name": "Theory of Automata"
         },
         {
-            "id": "CS2007",
+            "id": "CS3004",
             "department": "CS",
-            "name": "Data Structures"
+            "name": "Software Design andAnalysis"
         },
         {
             "id": "CS2008",
             "department": "CS",
-            "name": "TOA"
+            "name": "Numerical Computing"
+        },
+        {
+            "id": "CS2005",
+            "department": "CS",
+            "name": "Database Systems"
+        },
+        {
+            "id": "CS2006",
+            "department": "CS",
+            "name": "Operating Systems"
         },
         {
             "id": "CS2009",
             "department": "CS",
-            "name": "Deign and Analysis of Algorithms"
+            "name": "Design and Analysis of Algorithms"
         },
         {
-            "id": "CS2010",
+            "id": "CL2005",
             "department": "CS",
-            "name": "Digital Logic Design"
+            "name": "Database Systems Lab"
         },
         {
-            "id": "CS2011",
+            "id": "CL2006",
             "department": "CS",
-            "name": "Discrete Structures"
+            "name": "Operating Systems Lab"
         },
         {
-            "id": "CS2013",
+            "id": "CL3001",
             "department": "CS",
-            "name": "PF-Lab"
+            "name": "Computer Networks Lab"
         },
         {
-            "id": "CS2014",
-            "department": "CS",
-            "name": "OOP-Lab"
+            "id": "MT2005",
+            "department": "MT",
+            "name": "Probability and Statistics"
         },
         {
-            "id": "CS2015",
-            "department": "CS",
-            "name": "SDA"
+            "id": "SS2007",
+            "department": "SS",
+            "name": "Technical and Business Writing"
         }
     ]
 }

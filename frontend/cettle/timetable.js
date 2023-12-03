@@ -1,9 +1,9 @@
 var apiHost = "/flask";
 var tt = null;
 var venues = null;
-function loadVenues()
+function loadVenues() //loads venues of selected department
 {
-  var dept = document.getElementById("dept-select").value;
+    var dept = document.getElementById("dept-select").value;
     var table = document.getElementById("tt");
   axios.get(apiHost+"/venues").then(response => {
     venues = response.data["venues"];
@@ -19,7 +19,7 @@ function loadVenues()
     }
     table.appendChild(tr);
     for(var i=0;i<venues.length;i++){
-      if(venues[i].id.substr(0,dept.length) == dept){
+      if(venues[i].dept == dept){
         var tr = document.createElement("tr");
         for(var j=1;j<=9;j++){
           var td  = document.createElement("td");

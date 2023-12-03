@@ -72,10 +72,12 @@ function listTeachers()
       thead.children[0].appendChild(document.createElement("th"));
       thead.children[0].appendChild(document.createElement("th"));
       thead.children[0].appendChild(document.createElement("th"));
+      thead.children[0].appendChild(document.createElement("th"));
       
       thead.children[0].children[0].innerHTML = "ID";
       thead.children[0].children[1].innerHTML = "Name";
-      thead.children[0].children[2].innerHTML = "";
+      thead.children[0].children[2].innerHTML = "Dept";      
+      thead.children[0].children[3].innerHTML = "";
       table.appendChild(thead);
       var tbody = document.createElement("tbody");
      
@@ -87,13 +89,16 @@ function listTeachers()
          tr.appendChild(document.createElement("td"));
          tr.appendChild(document.createElement("td"));
          tr.appendChild(document.createElement("td"));
+         tr.appendChild(document.createElement("td"));
+                 
          tr.children[0].innerHTML = obj.id;
          tr.children[1].innerHTML = obj.name;
+         tr.children[2].innerHTML = obj.dept;
          var del = document.createElement("i");
          del.onclick = deleteTeacher;
          del.classList.add("fa");
          del.classList.add("fa-trash");
-         tr.children[2].appendChild(del);
+         tr.children[3].appendChild(del);
          tbody.appendChild(tr);
       }
       table.appendChild(tbody);
@@ -110,12 +115,13 @@ function addTeacher()
 {
   var id = document.getElementById('tid').value;
   var name = document.getElementById("tname").value;
+  var dept = document.getElementById("dept").value;
   if(id == '' || name == '')
   {
     notifyFail("Empty fields not allowed!");
     return null;
   }
-  var payload = {"id": id,"name": name};
+  var payload = {"id": id,"name": name,"dept": dept};
   axios.post(apiHost+"/inst",payload).then(response => {
     
       var tbody = document.getElementsByTagName("tbody")[0];
@@ -123,12 +129,15 @@ function addTeacher()
       tr.appendChild(document.createElement("td"));
       tr.appendChild(document.createElement("td"));
       tr.appendChild(document.createElement("td"));
+      tr.appendChild(document.createElement("td"));
       tr.children[0].innerHTML = id;
       tr.children[1].innerHTML = name;
-      tr.children[2].appendChild(document.createElement("i"));
-      tr.children[2].children[0].classList.add("fa");
-      tr.children[2].children[0].classList.add("fa-trash");
-      tr.children[2].children[0].onclick = deleteTeacher;
+      tr.children[2].innerHTML = dept;
+      
+      tr.children[3].appendChild(document.createElement("i"));
+      tr.children[3].children[0].classList.add("fa");
+      tr.children[3].children[0].classList.add("fa-trash");
+      tr.children[3].children[0].onclick = deleteTeacher;
       tbody.appendChild(tr);
       notifySuccess("Teacher added!");
     

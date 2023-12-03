@@ -109,11 +109,14 @@ function listSections()
       thead.children[0].appendChild(document.createElement("th"));
       thead.children[0].appendChild(document.createElement("th"));
       thead.children[0].appendChild(document.createElement("th"));
-      
+      thead.children[0].appendChild(document.createElement("th"));
+            
       thead.children[0].children[0].innerHTML = "Name";
       thead.children[0].children[1].innerHTML = "Course ID";
       thead.children[0].children[2].innerHTML = "Teacher ID";
-      thead.children[0].children[3].innerHTML = "";
+      thead.children[0].children[3].innerHTML = "Dept";
+      
+      thead.children[0].children[4].innerHTML = "";
 
       table.appendChild(thead);
       var tbody = document.createElement("tbody");
@@ -127,14 +130,17 @@ function listSections()
          tr.appendChild(document.createElement("td"));
          tr.appendChild(document.createElement("td"));
          tr.appendChild(document.createElement("td"));
+         tr.appendChild(document.createElement("td"));
          tr.children[0].innerHTML = obj.name;
          tr.children[1].innerHTML = obj.courseID;
          tr.children[2].innerHTML= obj.instID;
+         tr.children[3].innerHTML= obj.dept;
+         
          var del = document.createElement("i");
          del.onclick = deleteSection;
          del.classList.add("fa");
          del.classList.add("fa-trash");
-         tr.children[3].appendChild(del);
+         tr.children[4].appendChild(del);
          tbody.appendChild(tr);
       }
       table.appendChild(tbody);
@@ -151,14 +157,14 @@ function addSection()
 {
   var tid = document.getElementById('teacher').value;
   var cid = document.getElementById('course').value;
-  
+  var dept = document.getElementById("dept").value;
   var name = document.getElementById("sname").value;
   if(tid == '' || cid == '' || name == '')
   {
     notifyFail("Empty fields not allowed!");
     return null;
   }
-  var payload = {"courseID": cid,"instID": tid,"name": name};
+  var payload = {"courseID": cid,"instID": tid,"name": name,"dept": dept};
   axios.post(apiHost+"/sections",payload).then(response => {
     
       var tbody = document.getElementsByTagName("tbody")[0];
@@ -167,14 +173,17 @@ function addSection()
       tr.appendChild(document.createElement("td"));
       tr.appendChild(document.createElement("td"));
       tr.appendChild(document.createElement("td"));
-
+      tr.appendChild(document.createElement("td"));
+      
       tr.children[0].innerHTML = name;
       tr.children[1].innerHTML = cid;
       tr.children[2].innerHTML = tid;
-      tr.children[3].appendChild(document.createElement("i"));
-      tr.children[3].children[0].classList.add("fa");
-      tr.children[3].children[0].classList.add("fa-trash");
-      tr.children[3].children[0].onclick = deleteSection;
+      tr.children[3].innerHTML = dept;
+      
+      tr.children[4].appendChild(document.createElement("i"));
+      tr.children[4].children[0].classList.add("fa");
+      tr.children[4].children[0].classList.add("fa-trash");
+      tr.children[4].children[0].onclick = deleteSection;
       tbody.appendChild(tr);
       notifySuccess("Section added!");
     
