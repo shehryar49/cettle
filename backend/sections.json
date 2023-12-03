@@ -4,6 +4,11 @@
             "name": "A",
             "courseID": "CS2006",
             "instID": "1"
+        },
+        {
+            "courseID": "CS2007",
+            "instID": "1",
+            "name": "BCS-5E"
         }
     ]
 }

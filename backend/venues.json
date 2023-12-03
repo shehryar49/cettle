@@ -1,47 +1,53 @@
 {
     "venues": [
         {
-            "id": "CS3",
-            "seats": 40
-        },
-        {
             "id": "CS4",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS5",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS6",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS7",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS8",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS9",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS10",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS11",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS15",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS16",
+            "dept": "CS",
             "seats": 40
         },
         {
@@ -96,59 +102,78 @@
         },
         {
             "id": "English Lab-1",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "English Lab-2",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "English Lab-3",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "English Lab-4",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "Lab(CS1)",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "Lab(CS2A)",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "Lab(CS2B)",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "Lab(CS3)",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "Lab(CS4)",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "Lab(CS6)",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "Lab(CS8)",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "Lab(CS9)",
+            "dept": "CS",
             "seats": 40
         },
         {
             "id": "CS2",
+            "dept": "CS",
             "seats": "40"
         },
         {
             "id": "CS1",
+            "dept": "CS",
             "seats": "40"
+        },
+        {
+            "id": "khudda",
+            "seats": "69",
+            "dept": "CS"
         }
     ]
 }

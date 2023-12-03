@@ -28,7 +28,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" style="font-style: italic" href="/cettle">Cettle</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-    controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -71,6 +71,14 @@
       <div class="accordion-body">
         <input type="text" placeholder="ID" id="vid"><br><br>
         <input type="number" placeholder="Seats" id="vseats"><br><br>
+        <label>Department: </label>
+        <select id="dept" name="dept">
+        <option value="CS">CS</option>
+        <option value="EE">EE</option>
+        <option value="CE">CE</option>
+        <option value="CV">CV</option>
+        <option value="MG">MG</option>
+        </select><br><br>
         <button type="button" onclick="addVenue()" class="btn btn-success">Add</button>
       </div>
     </div>
