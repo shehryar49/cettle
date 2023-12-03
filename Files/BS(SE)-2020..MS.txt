@@ -1,0 +1,39 @@
+	BS(SE)-2020:
+					
+CS3002	Information Security				BSE-7A	Dr. Rana Asif Rehman		3	BS (SE)	CS (Core)
+CS3002	Information Security				BSE-7B	Dr. Rana Asif Rehman		3	BS (SE)	CS (Core)
+
+CS4001	Professional Practices				BSE-7A	Mr. Zummar Saad (VF)		3	BS (SE)	CS (Core)
+CS4001	Professional Practices				BSE-7B	Mr. Waqas Manzoor (VF)		3	BS (SE)	CS (Core)
+
+SE4003	Fundamental of Software Project Management 	BSE-7A	 Mr. Salman Ahmad (VF)		3	BS (SE)	SE (Core)
+SE4003	Fundamental of Software Project Management 	BSE-7B	 Mr. Salman Ahmad (VF)		3	BS (SE)	SE (Core)
+
+CS4039	Software for Mobile Devices			BSE-7A	Mr. Mughees Musaddaq (VF)	3	BS (SE)	CS (Elective)
+
+AI4007	Applied Artificial Intelligence			BSE-7A	Dr. Kashif Zafar		3	BS (SE)	CS (Core)
+
+SE4091	Final Year Project -I									3	BS (SE)	CS (Core)
+
+	
+Repeat courses:
+				
+CS3001	Computer Networks	BSE-7A	Dr. Muhammad Irteza	3	BS (SE)	CS (Core)
+CL3001	Computer Networks Lab	BSE-7A1				1	BS (SE)	CS (Core)
+CL3001	Computer Networks Lab	BSE-7A2				1	BS (SE)	CS (Core)
+
+	
+MS(SPM) 2023:
+					
+CS5015	Software Project Management		MSP-1A	Dr. Ali Afzal Malik	3	MS (SPM)	CS (Core)
+CS5001	Research Methodology			MSP-1A	Dr. Asif Gilani		3	MS (SPM)	CS (Core)
+MG4006	Management & Organizational Behavior	MSP-1A	Mr. Saqib Bhatti	3	MS (SPM)	MG (Core)
+	
+MS (SPM) 2022:
+					
+SE5031 	Adavanced Software Engineering		MSP-3A	Dr. Ghulam Ahmad Farrukh	3	MS (SPM)	SE (Elective)
+CS5087	MS Practicum - I			MSP-3A	Dr. Ghulam Ahmad Farrukh	3	MS (SPM)	CS (Core)
+	
+MS(SPM) Seniors:					
+CS5088	MS Practicum - II			MSP-3A	Dr. Ghulam Ahmad Farrukh	3	MS (SPM)	CS (Core)
+CS5092	MS Thesis - II 									3	MS (SPM)	CS (Core)

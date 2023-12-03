@@ -1,0 +1,42 @@
+	BS(DS)-2020..MS:
+					
+CS3002	Information Security		BDS-7A	Dr. Ammar Haider	3	BS (DS)	CS (Core)
+CS3002	Information Security		BDS-7B	Mr. Ahmad  Shah (VF)	3	BS (DS)	CS (Core)
+
+CS4001	Professional Practices		BDS-7A	Ms. Samman Ashraf (JL)	3	BS (DS)	CS (Core)
+CS4001	Professional Practices		BDS-7B	Mr. Waqar Baig		3	BS (DS)	CS (Core)
+
+CS3001	Computer Networks		BDS-7A	Dr. Muhammad Irteza	3	BS (DS)	CS (Core)
+CS3001	Computer Networks		BDS-7B	Ms. Umme Ammara		3	BS (DS)	CS (Core)
+
+CL3001	Computer Networks Lab		BDS-7A1				1	BS (DS)	CS (Core)
+CL3001	Computer Networks Lab		BDS-7A2				1	BS (DS)	CS (Core)
+CL3001	Computer Networks Lab		BDS-7B1				1	BS (DS)	CS (Core)
+
+CS4049	Block chain & Cryptocurrency	BDS-7A	Ms. Tayyaba Bukhari	3	BS (DS)	CS (Elective)
+CS4049	Block chain & Cryptocurrency	BDS-7B	Ms. Tayyaba Bukhari	3	BS (DS)	CS (Elective)
+
+DS4091	Final Year Project -I						3	BS (DS)	DS (Core)
+	
+
+Repeat course:
+					
+CS3006	Parallel and Distributed Computing (merged with CS?)	BDS-7A	Mr. Danyal Farhat	3	BS (DS)	CS (Core)
+	
+MS(DS) 2023:
+					
+DS4002	Applied Programming	    				MDS-1A	Mr. Razi Uddin (VF)	NC	MS(DS)	DS (Core)
+DS5003	Statistical and Mathematical Methods for Data Science	MDS-1A	Dr. Mubasher Baig	3	MS (DS)	DS (Core)
+DS5002	Data Science Tools and Technique			MDS-1A	Dr. Kashif Zafar 	3	MS (DS)	DS (Core)
+DS5001	Big Data (specialized core) 				MDS-1A	Dr. Asma Ahmad 		3	MS (DS)	Specialized (Core)
+	
+MS(DS) 2022:
+					
+CS5118	Time Series Prediction 		MDS-3A	Dr. Hajra Waheed	3	MS (DS)	DS (Elective)
+CS5058	Computer Speech Processing 	MDS-3A	Dr. Maryam Bashir	3	MS (DS)	DS (Elective)
+CS5001	Research Methodology		MSP-1A				3	MS(SPM) CS (Core)
+DS5091	MS Thesis-I							3	MS (DS)	DS (Core)
+	
+MS(DS) seniors:
+					
+DS5092	MS Thesis-II			3	MS (DS)	DS (Core)
