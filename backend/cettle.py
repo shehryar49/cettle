@@ -237,7 +237,15 @@ def slimTable(dept):
     print(req[i]["name"])
     # generate table of section and add it to tts
     # mon
-    
+    slim = {"monday": []}
+    T = timetable["monday"]
+    for j in range(8):
+      secs = T[j]
+      for k in range(len(secs)):
+        if secs[k]["name"] == req[i]["name"] and secs[k]["dept"] == dept:
+          slim["monday"].append({"venue": secs[k]["venue"],"slot": str(j+1),"courseName": secs[k]["courseName"]})
+    tts.append(slim)
+  print(tts)
   return jsonify({}),200
 ##
 loadData()

@@ -152,6 +152,28 @@ function exportTT()
   });
   
 }
+function slimTT()
+{
+  var table = document.getElementById("tt");
+  var html = "";
+  for(var i=0;i<table.children.length;i++)
+  {
+    var tr = table.children[i];
+    var rowhtml = "<tr>";
+    var empty = true;
+    for(var j=0;j<9;j++)
+    {
+      var td = table.children[i].children[j];
+      if(td.innerHTML != "" && j!=0)
+        empty = false;
+      rowhtml += "<td>"+td.textContent+"</td>";
+    }
+    rowhtml += "</tr>";
+    if(!empty)
+      html += rowhtml;
+  }
+  console.log(html);
+}
 function clearSlot()
 {
   var dept = document.getElementById("dept-select").value;
