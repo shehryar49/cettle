@@ -21,13 +21,8 @@
     font-size: 14px;
     table-layout: fixed;
   }
-  .sidelinks a
-  {
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    padding-right: 30%;
-  }
+.table-bordered th, .table-bordered td { border: 2px solid #ddd!important }
+
 </style>
   </head>
   <body onload="loadTT()">
@@ -98,19 +93,16 @@
       </thead>
     </table>
     <br><br><br>
-    <div class="row">
-    <div class="col-3 sidelinks" style="background-color: #212529;color: white">
-      <a href="#">XYZ</a><br>
-      <a href="#">XYZ</a><br>
-      <a href="#">XYZ</a><br>
-      <a href="#">XYZ</a><br>
-      <a href="#">XYZ</a><br>
-      <a href="#">XYZ</a><br>
-      <a href="#">XYZ</a><br>
+    <div class="accordion" id="accordionExample">
+ <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Schedule Section
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
       
-    </div>
-    <div class="col" style="background-color: #002D62;color: white">
-    <h3>Schedule a section</h3>
     <select id="section-select"></select>
     <br><br>
     <select id="venue-select"></select>
@@ -141,12 +133,56 @@
     
     </select>
     <br><br>
-    <button onclick="scheduleSection()">Schedule</button>
-    <br><br>
-    <button class="btn btn-dark" onclick="exportTT()">Export Dept Timetable</button>
-    </div>
-    </div>
+    <button class="btn btn-success" onclick="scheduleSection()">Schedule</button>
+
+    
+    
     <br><BR><BR><BR>
+      </div>
+      
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Clear Slot
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <label>Slot: </label>
+          <select id="slot-to-clear">
+        <option value="1">8:30</option>
+    	<option value="2">10:00</option>
+    	<option value="3">11:30</option>
+    	<option value="4">1:00</option>
+    	<option value="5">2:30</option>
+    	<option value="6">4:00</option>
+    	<option value="7">5:30</option>
+    	<option value="8">7:00</option>
+    	</select>
+    	<label>Venue: </label>
+    	<select id="venue-select1"></select>
+    	<button onclick="clearSlot()" class="btn btn-success">Clear</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false">
+        Export
+      </button>
+    </h2>
+    <div id="collapse4" class="accordion-collapse collapse"  data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3>Export timetable for all sections of selected department</h3>
+        <button class="btn btn-success" onclick="exportTT()">Export</button>
+      </div>
+    </div>
+  </div>
+
+</div>
     
     </div>
     

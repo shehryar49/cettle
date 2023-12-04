@@ -11,7 +11,9 @@ async function loadVenues() //loads venues of selected department
     var dept = document.getElementById("dept-select").value;
     var table = document.getElementById("tt");
     var ven = document.getElementById("venue-select");
+    var ven1 = document.getElementById("venue-select1");
     ven.innerHTML = "";
+    ven1.innerHTML = "";
   await axios.get(apiHost+"/venues").then(response => {
     venues = response.data["venues"];
     table.innerHTML = "";
@@ -26,9 +28,14 @@ async function loadVenues() //loads venues of selected department
     table.appendChild(tr);
     for(var i=0;i<venues.length;i++){
       var opt = document.createElement("option");
+      var opt1 = document.createElement("option");
       opt.innerHTML = venues[i].id;
       opt.value = venues[i].id;
+      
       ven.appendChild(opt);
+      opt1.innerHTML = venues[i].id;
+      opt1.value = venues[i].id;
+      ven1.appendChild(opt1);
       if(venues[i].dept == dept){
         var tr = document.createElement("tr");
         for(var j=1;j<=9;j++){
@@ -46,12 +53,14 @@ async function loadVenues() //loads venues of selected department
 }
 function loadTT()
 {
+  var table = document.getElementById("tt");
+  table.innerHTML = "";
   loadVenues();
   loadSections();
  // return null;
   var day = document.getElementById("day-select").value;
   var dept = document.getElementById("dept-select").value;
-  var table = document.getElementById("tt");
+
   axios.get(apiHost+"/timetable").then( response => {
     tt = response.data;
     var slots = response.data[day]; //8 slots
@@ -137,5 +146,22 @@ function scheduleSection()
 
 function exportTT()
 {
-
+  var dept = document.getElementById("dept-select").value;
+  axios.get(apiHost+"/timetable/slim/"+dept).then(response => {
+  
+  });
+  
+}
+function clearSlot()
+{
+  var dept = document.getElementById("dept-select").value;
+  var ven = document.getElementById("venue-select1").value;
+  var slot = document.getElementById("slot-to-clear").value;
+  var day = document.getElementById("day-select").value;
+  var payload = {"dept": dept,"venue": ven,"slot": slot,"day": day};
+  
+  axios.post(apiHost+"/timetable/clear",payload).then(response => {
+    alert("Success");
+    loadTT();
+  });
 }

@@ -168,6 +168,16 @@ def deleteSection(name,cid):
 @app.route("/timetable",methods=["GET"])
 def getTimetable():
   return jsonify(timetable),200
+@app.route("/timetable/clear",methods=["POST"])
+def clearSlot():
+  obj = request.json
+  SL = timetable[obj["day"]][int(obj["slot"])-1]
+  for i in range(len(SL)):
+    print(SL[i]["courseName"])
+    if SL[i]["venue"] == obj["venue"] and SL[i]["dept"] == obj["dept"]:
+      del SL[i]
+  rewrite(timetable,"timetable.json")
+  return jsonify({}),200
 @app.route("/timetable/schedule",methods=["POST"])
 def scheduleSection():
   obj = request.json
@@ -207,6 +217,27 @@ def scheduleSection():
   
   rewrite(sections,"sections.json")
   rewrite(timetable,"timetable.json")
+  return jsonify({}),200
+@app.route("/timetable/slim/<dept>",methods=["GET"])
+def slimTable(dept):
+  SL = sections["sections"]
+  req = []
+  for i in range(len(SL)):
+    if(SL[i]["dept"] == dept):
+      if searchObj("name",SL[i]["name"],req)!=None:
+        pass
+      elif (SL[i]["name"][-1:] == "1" or SL[i]["name"][-1:] == "2") and searchObj("name",SL[i]["name"][:-1],req)!=None:
+        pass
+      else:  
+        req.append(SL[i])
+  # all CS sections are in req list
+  print()
+  tts = []
+  for i in range(len(req)):
+    print(req[i]["name"])
+    # generate table of section and add it to tts
+    # mon
+    
   return jsonify({}),200
 ##
 loadData()
