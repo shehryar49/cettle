@@ -233,19 +233,30 @@ def slimTable(dept):
   # all CS sections are in req list
   print()
   tts = []
+  days = ["monday","tuesday","wednesday","thursday","friday","saturday"]
   for i in range(len(req)):
     print(req[i]["name"])
     # generate table of section and add it to tts
     # mon
-    slim = {"monday": []}
-    T = timetable["monday"]
-    for j in range(8):
-      secs = T[j]
-      for k in range(len(secs)):
-        if secs[k]["name"] == req[i]["name"] and secs[k]["dept"] == dept:
-          slim["monday"].append({"venue": secs[k]["venue"],"slot": str(j+1),"courseName": secs[k]["courseName"]})
+    slim = {}
+    for m in range(len(days)):
+      curr = days[m]
+      slim[curr] = []
+      T = timetable[curr]
+      
+      for j in range(8):
+        secs = T[j]
+        for k in range(len(secs)):
+          if (secs[k]["name"] == req[i]["name"] or req[i]["name"]+"1" == secs[k]["name"] or req[i]["name"]+"2" == secs[k]["name"]) and secs[k]["dept"] == dept:
+            slim[curr].append({"venue": secs[k]["venue"],"slot": str(j+1),"courseName": secs[k]["courseName"]})
+      if slim[curr] == []:
+        del slim[curr]
     tts.append(slim)
   print(tts)
+  secE = {"BCS-5E": tts[0]}
+  f = open("dummy.json","w")
+  f.write(json.dumps(secE,indent=4))
+  f.close()
   return jsonify({}),200
 ##
 loadData()

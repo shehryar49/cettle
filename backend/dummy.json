@@ -1,0 +1,72 @@
+{
+    "BCS-5E": {
+        "monday": [
+            {
+                "venue": "E&M-1",
+                "slot": "3",
+                "courseName": "Computer Networks"
+            },
+            {
+                "venue": "CS-3",
+                "slot": "4",
+                "courseName": "Theory of Automata"
+            },
+            {
+                "venue": "CS-6",
+                "slot": "6",
+                "courseName": "Numerical Computing"
+            }
+        ],
+        "tuesday": [
+            {
+                "venue": "Seminar Hall",
+                "slot": "1",
+                "courseName": "Technical and Business Writing"
+            },
+            {
+                "venue": "CS-15",
+                "slot": "3",
+                "courseName": "Software Design andAnalysis"
+            },
+            {
+                "venue": "Lab(CS-4)",
+                "slot": "5",
+                "courseName": "Computer Networks Lab"
+            },
+            {
+                "venue": "Lab(CS-4)",
+                "slot": "6",
+                "courseName": "Computer Networks Lab"
+            }
+        ],
+        "wednesday": [
+            {
+                "venue": "E&M-11",
+                "slot": "3",
+                "courseName": "Computer Networks"
+            },
+            {
+                "venue": "CS-3",
+                "slot": "4",
+                "courseName": "Theory of Automata"
+            },
+            {
+                "venue": "CS-6",
+                "slot": "6",
+                "courseName": "Numerical Computing"
+            }
+        ],
+        "thursday": [
+            {
+                "venue": "CS-3",
+                "slot": "1",
+                "courseName": "Technical and Business Writing"
+            },
+            {
+                "venue": "CS-15",
+                "slot": "3",
+                "courseName": "Software Design andAnalysis"
+            }
+        ]
+    }
+}
