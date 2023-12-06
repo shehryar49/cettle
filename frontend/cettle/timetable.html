@@ -12,6 +12,8 @@
     <script src="timetable.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.js" integrity="sha512-Bw9Zj8x4giJb3OmlMiMaGbNrFr0ERD2f9jL3en5FmcTXLhkI+fKyXVeyGyxKMIl1RfgcCBDprJJt4JvlglEb3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.0/jspdf.plugin.autotable.min.js" integrity="sha512-MOQkOfO7iw7/ZiuMJzThLhiiidpNBXcocOWUi514xVtxZKhKQAhS/krSuGA8OCZnPuQixxZhd8+wXAZVNJsqeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <style>
   .nav-link:hover
   {
@@ -22,6 +24,8 @@
   {
     font-size: 14px;
     table-layout: fixed;
+
+    
   }
 .table-bordered th, .table-bordered td { border: 2px solid #ddd!important }
 
@@ -179,15 +183,16 @@
     </h2>
     <div id="collapse4" class="accordion-collapse collapse"  data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <h3>Export timetable for all sections of selected department</h3>
+        <h5>Export timetable for all sections of selected department</h5><br>
         <button class="btn btn-success" onclick="exportTT()">Export</button>
+        <br><br><br>
       </div>
     </div>
   </div>
-
+<br><br><br><br><br>
 </div>
     
-        <div id="exported" style="page-break-inside: avoid;">
+        <div id="exported" class="tt">
     </div>
     
     </div>

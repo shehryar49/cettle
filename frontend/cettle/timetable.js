@@ -181,7 +181,7 @@ function exportTT()
     for(var key in data)
     {
       var sec = key;
-      for(var u=1;u<=5;u+=1){
+
       
       var table = document.createElement("table");
       table.classList.add("table");
@@ -226,10 +226,10 @@ function exportTT()
            table.appendChild(tr);
          }
       }
-
+      table.style.pageBreakBefore = "always";
       div.appendChild(table); 
             
-     }
+     
 
     }
            window.jsPDF = window.jspdf.jsPDF;
@@ -240,7 +240,7 @@ doc.html(div, {
         // Save the PDF
         doc.save(dept+"-timetable"+'.pdf');
     },
-    autoPaging: false,
+    autoPaging: 'text',
     x: 15,
     y: 15,
     width: 170, //target width in the PDF document
