@@ -10,13 +10,15 @@
     <title>Timetable</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="timetable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.js" integrity="sha512-Bw9Zj8x4giJb3OmlMiMaGbNrFr0ERD2f9jL3en5FmcTXLhkI+fKyXVeyGyxKMIl1RfgcCBDprJJt4JvlglEb3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <style>
   .nav-link:hover
   {
     background-color: white;
     color: black !important;
   }
-  #tt
+  .tt
   {
     font-size: 14px;
     table-layout: fixed;
@@ -75,7 +77,7 @@
       <option value="saturday">Saturday</option>
     </select>
     <br><br>
-    <table id="tt" class="table table-responsive table-bordered table-striped table-hover thett">
+    <table id="tt" class="table table-responsive table-bordered table-striped table-hover tt">
       <thead>
         <tr>
         <td>Venue</td>
@@ -93,6 +95,7 @@
       </thead>
     </table>
     <br><br><br>
+
     <div class="accordion" id="accordionExample">
  <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
@@ -183,6 +186,9 @@
   </div>
 
 </div>
+    
+        <div id="exported" style="page-break-inside: avoid;">
+    </div>
     
     </div>
     

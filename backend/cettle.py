@@ -232,32 +232,37 @@ def slimTable(dept):
         req.append(SL[i])
   # all CS sections are in req list
   print()
-  tts = []
+  tts = {}
   days = ["monday","tuesday","wednesday","thursday","friday","saturday"]
   for i in range(len(req)):
     print(req[i]["name"])
     # generate table of section and add it to tts
     # mon
     slim = {}
+    maxCourses = 0
     for m in range(len(days)):
       curr = days[m]
       slim[curr] = []
       T = timetable[curr]
-      
+      count = 0
       for j in range(8):
         secs = T[j]
         for k in range(len(secs)):
           if (secs[k]["name"] == req[i]["name"] or req[i]["name"]+"1" == secs[k]["name"] or req[i]["name"]+"2" == secs[k]["name"]) and secs[k]["dept"] == dept:
             slim[curr].append({"venue": secs[k]["venue"],"slot": str(j+1),"courseName": secs[k]["courseName"]})
+            count+=1
       if slim[curr] == []:
         del slim[curr]
-    tts.append(slim)
+      if(count >= maxCourses):
+        maxCourses = count
+    slim["maxCourses"] = maxCourses
+    tts[req[i]["name"]] = slim
   print(tts)
-  secE = {"BCS-5E": tts[0]}
+  #secE = {"BCS-5E": tts[0]}
   f = open("dummy.json","w")
-  f.write(json.dumps(secE,indent=4))
+  f.write(json.dumps(tts,indent=4))
   f.close()
-  return jsonify({}),200
+  return jsonify(tts),200
 ##
 loadData()
 app.run()

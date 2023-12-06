@@ -67,6 +67,7 @@
                 "slot": "3",
                 "courseName": "Software Design andAnalysis"
             }
-        ]
+        ],
+        "maxCourses": 4
     }
 }
