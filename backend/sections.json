@@ -4,49 +4,42 @@
             "courseID": "CS3001",
             "instID": "1",
             "name": "BCS-5E",
-            "venue": "E&M-11",
             "dept": "CS"
         },
         {
             "courseID": "CS3005",
             "instID": "3",
             "name": "BCS-5E",
-            "venue": "CS-3",
             "dept": "CS"
         },
         {
             "courseID": "CS3004",
             "instID": "2",
             "name": "BCS-5E",
-            "venue": "CS-16",
             "dept": "CS"
         },
         {
             "courseID": "CS2008",
             "instID": "7",
             "name": "BCS-5E",
-            "venue": "CS-6",
             "dept": "CS"
         },
         {
             "courseID": "SS2007",
             "instID": "4",
             "name": "BCS-5E",
-            "venue": "CS-3",
             "dept": "CS"
         },
         {
             "courseID": "CL3001",
             "instID": "6",
             "name": "BCS-5E1",
-            "venue": null,
             "dept": "CS"
         },
         {
             "courseID": "CL3001",
             "instID": "5",
             "name": "BCS-5E2",
-            "venue": "Lab(CS-4)",
             "dept": "CS"
         }
     ]

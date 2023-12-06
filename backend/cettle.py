@@ -53,6 +53,9 @@ def addCourse():
     return jsonify({'msg': 'Course added!'}),200
 @app.route("/courses/<id>",methods=["DELETE"])
 def deleteCourse(id):
+    idx1 = searchObj("courseID",id,sections["sections"])
+    if idx1!=None:
+      return jsonify({'msg': 'The course has sections associated with it it. Cannot delete it'}),409
     idx = searchObj("id",id,courses["courses"])
     if idx != None:
       del courses["courses"][idx]
@@ -86,7 +89,7 @@ def deleteVenue(id):
       return jsonify(venues),200
     return jsonify({'msg': 'Venue not found!'}),404
 
-# not implementing update venue
+# not implementing update
 # delete and create again
 
 # instructors
@@ -105,15 +108,28 @@ def addInst():
     return jsonify({'msg': 'Instructor added!'}),200
 @app.route("/inst/<id>",methods=["DELETE"])
 def deleteInst(id):
+    idx1 = searchObj("instID",id,sections["sections"])
+    if idx1!=None:
+      return jsonify({'msg': 'Cannot delete instructor. The instructor teaches section '+sections["sections"][idx1]["name"]}),409
     idx = searchObj("id",id,inst["inst"])
     if idx!=None:
       del inst["inst"][idx]
       rewrite(inst,"inst.json")
       return jsonify(inst),200
     return jsonify({'msg': 'Instructor not found!'}),404
-# not implementing update venue
-# delete and create again
 
+# not implementing update 
+# delete and create again
+@app.route("/inst/addpref",methods=["POST"])
+def addInstPref():
+  obj = request.json
+  id = obj["id"] # instructor id
+  idx = searchObj("id",id,inst["inst"])
+  if idx == None:
+    return jsonify({'msg': 'Teacher not found!'}),404
+  inst["inst"][idx]["slots"] = [obj["start"],obj["end"]]
+  rewrite(inst,"inst.json")
+  return jsonify({'msg': 'Success'}),200
 # sections
 @app.route("/sections",methods=["GET"])
 def listSections():
@@ -174,7 +190,9 @@ def clearSlot():
   SL = timetable[obj["day"]][int(obj["slot"])-1]
   for i in range(len(SL)):
     print(SL[i]["courseName"])
-    if SL[i]["venue"] == obj["venue"] and SL[i]["dept"] == obj["dept"]:
+    if SL[i]["venue"] == obj["venue"]:
+      if SL[i]["dept"] != obj["dept"]:
+        return jsonify({'msg': 'The slot is occupied by a course of another department. Switch to that department to clear it!'}),409
       del SL[i]
   rewrite(timetable,"timetable.json")
   return jsonify({}),200
@@ -188,6 +206,25 @@ def scheduleSection():
   end = int(obj["end"])
   vid = obj["vid"]
   slots = end - start + 1
+  if slots < 0:
+    return jsonify({'msg': 'End time cannot be less than start time!'}),500
+  idx1 = None
+  secList = sections["sections"]
+  for i in range(len(secList)):
+    print(secList[i])
+    if secList[i]["name"] == sid and secList[i]["courseID"] == cid:
+      idx1 = i
+      break
+  instID = secList[idx1]["instID"]
+  insIDX = searchObj("id",instID,inst["inst"])
+  secINST = inst["inst"][insIDX]
+  if "slots" in secINST:
+    istart = int(secINST["slots"][0])
+    iend = int(secINST["slots"][1])
+    print(start,end)
+    print(istart,iend)
+    if start < istart or end>iend or start > iend or end < istart:
+      return jsonify({'msg': 'Instructor of section prefers to teach only in slot range['+str(istart)+","+str(iend)+"]"}),409
   # check if section can be scheduled
   # dark magic logic
   
@@ -199,22 +236,26 @@ def scheduleSection():
       classes = tocheck[i-1]
       for k in range(len(classes)):
         sec = classes[k]
-        if sec["venue"] == vid: # Venue Clash!
-           return jsonify({'msg': 'Venue clash!'}),409
-        if sec["name"] == sid: # same section is having a class in the same slot already!
-           return jsonify({'msg': 'The section has class of '+sec["courseName"]+" at that time!"}),409
+        if sid[:-1] == sec["name"][:-1] and ((sid[-1:] == "1" and sec["name"][-1:]=="2") or (sid[-1:] == "2" and sec["name"][-1:]=="1")) and cid == sec["courseID"]:
+          pass
+        else:
+          if sec["venue"] == vid: # Venue Clash!
+            return jsonify({'msg': 'Venue clash! Section '+sec["name"]+" has a class of"+sec["courseName"]+" at "+sec["venue"]+" at that time"}),409
+          if sec["name"] == sid: # same section is having a class in the same slot already!
+            return jsonify({'msg': 'The section has another class of '+sec["courseName"]+" at that time!"}),409
+        if sec["instID"] == sections["sections"][idx1]["instID"] and sec["venue"] != vid:
+          return jsonify({'msg': 'Section can not be scheduled because teacher of this section is teaching class of '+sec["courseName"]+" at the requested time!"}),409
+        
       tochange.append(classes)
       i+=1
   # No clash
-  # set section venue to vid
-  # and append it in timetable
-  idx = searchSection(sid,cid)
-  # supposing idx is never none
-
+   
+  #print(tochange)
   idx = searchObj("id",cid,courses["courses"])
-  for i in range(len(tochange)):
-    tochange[i].append({"name": sid,"courseID": cid,"venue": vid,"courseName": courses["courses"][idx]["name"],"dept": sections["sections"][idx]["dept"]})
   
+  for i in range(len(tochange)):
+    tochange[i].append({"name": sid,"courseID": cid,"venue": vid,"courseName": courses["courses"][idx]["name"],"dept": sections["sections"][idx1]["dept"],"instID": sections["sections"][idx1]["instID"]})
+   
   rewrite(sections,"sections.json")
   rewrite(timetable,"timetable.json")
   return jsonify({}),200
@@ -237,7 +278,7 @@ def slimTable(dept):
   for i in range(len(req)):
     print(req[i]["name"])
     # generate table of section and add it to tts
-    # mon
+    
     slim = {}
     maxCourses = 0
     for m in range(len(days)):
@@ -263,6 +304,31 @@ def slimTable(dept):
   f.write(json.dumps(tts,indent=4))
   f.close()
   return jsonify(tts),200
+@app.route("/exportConfig",methods=["GET"])
+def exportCONFIG():
+  res = {}
+  res["inst"] = inst["inst"]
+  res["courses"] = courses["courses"]
+  res["venues"] = venues["venues"]
+  res["timetable"] = timetable
+  res["sections"] = sections["sections"]
+  
+  return jsonify(res),200
+@app.route("/loadConfig",methods=["POST"])
+def importConfig():
+  res = request.json
+  inst["inst"] = res["inst"]
+  courses["courses"] = res["courses"]
+  venues["venues"] = res["venues"]
+  timetable = res["timetable"]
+  sections["sections"] = res["sections"]
+  
+  rewrite(inst,"inst.json")
+  rewrite(courses,"courses.json")
+  rewrite(venues,"venues.json")
+  rewrite(timetable,"timetablejson")
+  rewrite(sections,"sections.json")
+    
 ##
 loadData()
 app.run()

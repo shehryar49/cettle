@@ -69,14 +69,16 @@ function loadTT()
       var sections = slots[i]; //sections having classes at ith slot
       for(var j=0;j<sections.length;j++)
       {
-      //  alert(sections[j].venue);
         var L = table.children;
         var found = false;
         for(var k=0;k<L.length;k++)
         {
           if(L[k].children[0].textContent == sections[j].venue)
           {
-            L[k].children[i+1].innerHTML = sections[j].courseName+"( "+sections[j].name+")";//+"ok";
+            if(L[k].children[i+1].innerHTML == "")
+              L[k].children[i+1].innerHTML = sections[j].courseName+"( "+sections[j].name+")";//+"ok";
+            else
+              L[k].children[i+1].innerHTML += " & "+sections[j].courseName+"( "+sections[j].name+")";//+"ok";
             found = true;
             break;
             
@@ -213,7 +215,7 @@ function exportTT()
            for(var j=1;j<=courses.length;j++)
            {
              tr.appendChild(document.createElement("td"));
-             tr.children[j].innerHTML = (courses[j-1].courseName) + " ( " +courses[j-1].venue+" "+slots[courses[j-1].slot] +" )";     
+             tr.children[j].innerHTML = (courses[j-1].courseName) + " ( " +slots[courses[j-1].slot]+" "+courses[j-1].venue +" )";     
            }
            if(tr.children.length < tt.maxCourses+1)
            {
@@ -232,6 +234,7 @@ function exportTT()
      
 
     }
+    div.style.display = "block";
            window.jsPDF = window.jspdf.jsPDF;
   window.html2canvas = html2canvas;
 var doc = new jsPDF();
@@ -239,6 +242,7 @@ doc.html(div, {
     callback: function(doc) {
         // Save the PDF
         doc.save(dept+"-timetable"+'.pdf');
+        div.style.display = "none";
     },
     autoPaging: 'text',
     x: 15,
@@ -250,28 +254,7 @@ doc.html(div, {
 
   
 }
-function slimTT()
-{
-  var table = document.getElementById("tt");
-  var html = "";
-  for(var i=0;i<table.children.length;i++)
-  {
-    var tr = table.children[i];
-    var rowhtml = "<tr>";
-    var empty = true;
-    for(var j=0;j<9;j++)
-    {
-      var td = table.children[i].children[j];
-      if(td.innerHTML != "" && j!=0)
-        empty = false;
-      rowhtml += "<td>"+td.textContent+"</td>";
-    }
-    rowhtml += "</tr>";
-    if(!empty)
-      html += rowhtml;
-  }
-  console.log(html);
-}
+
 function clearSlot()
 {
   var dept = document.getElementById("dept-select").value;
@@ -283,5 +266,8 @@ function clearSlot()
   axios.post(apiHost+"/timetable/clear",payload).then(response => {
     alert("Success");
     loadTT();
+  }).catch(error => {
+    if(error.response)
+      alert(error.response.data.msg);
   });
 }

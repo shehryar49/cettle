@@ -7,8 +7,9 @@
                 "name": "BCS-5E",
                 "courseID": "CS3001",
                 "venue": "E&M-1",
+                "courseName": "Computer Networks",
                 "dept": "CS",
-                "courseName": "Computer Networks"
+                "instID": "1"
             }
         ],
         [
@@ -16,8 +17,9 @@
                 "name": "BCS-5E",
                 "courseID": "CS3005",
                 "venue": "CS-3",
+                "courseName": "Theory of Automata",
                 "dept": "CS",
-                "courseName": "Theory of Automata"
+                "instID": "3"
             }
         ],
         [],
@@ -26,8 +28,9 @@
                 "name": "BCS-5E",
                 "courseID": "CS2008",
                 "venue": "CS-6",
+                "courseName": "Numerical Computing",
                 "dept": "CS",
-                "courseName": "Numerical Computing"
+                "instID": "7"
             }
         ],
         [],
@@ -39,8 +42,9 @@
                 "name": "BCS-5E",
                 "courseID": "SS2007",
                 "venue": "Seminar Hall",
+                "courseName": "Technical and Business Writing",
                 "dept": "CS",
-                "courseName": "Technical and Business Writing"
+                "instID": "4"
             }
         ],
         [],
@@ -49,27 +53,46 @@
                 "name": "BCS-5E",
                 "courseID": "CS3004",
                 "venue": "CS-15",
+                "courseName": "Software Design and Analysis",
                 "dept": "CS",
-                "courseName": "Software Design andAnalysis"
+                "instID": "2"
             }
         ],
         [],
         [
             {
-                "name": "BCS-5E2",
+                "name": "BCS-5E1",
                 "courseID": "CL3001",
                 "venue": "Lab(CS-4)",
+                "courseName": "Computer Networks Lab",
                 "dept": "CS",
-                "courseName": "Computer Networks Lab"
-            }
-        ],
-        [
+                "instID": "6"
+            },
             {
                 "name": "BCS-5E2",
                 "courseID": "CL3001",
                 "venue": "Lab(CS-4)",
+                "courseName": "Computer Networks Lab",
                 "dept": "CS",
-                "courseName": "Computer Networks Lab"
+                "instID": "5"
+            }
+        ],
+        [
+            {
+                "name": "BCS-5E1",
+                "courseID": "CL3001",
+                "venue": "Lab(CS-4)",
+                "courseName": "Computer Networks Lab",
+                "dept": "CS",
+                "instID": "6"
+            },
+            {
+                "name": "BCS-5E2",
+                "courseID": "CL3001",
+                "venue": "Lab(CS-4)",
+                "courseName": "Computer Networks Lab",
+                "dept": "CS",
+                "instID": "5"
             }
         ],
         [],
@@ -83,8 +106,9 @@
                 "name": "BCS-5E",
                 "courseID": "CS3001",
                 "venue": "E&M-11",
+                "courseName": "Computer Networks",
                 "dept": "CS",
-                "courseName": "Computer Networks"
+                "instID": "1"
             }
         ],
         [
@@ -92,8 +116,9 @@
                 "name": "BCS-5E",
                 "courseID": "CS3005",
                 "venue": "CS-3",
+                "courseName": "Theory of Automata",
                 "dept": "CS",
-                "courseName": "Theory of Automata"
+                "instID": "3"
             }
         ],
         [],
@@ -102,8 +127,9 @@
                 "name": "BCS-5E",
                 "courseID": "CS2008",
                 "venue": "CS-6",
+                "courseName": "Numerical Computing",
                 "dept": "CS",
-                "courseName": "Numerical Computing"
+                "instID": "7"
             }
         ],
         [],
@@ -115,8 +141,9 @@
                 "name": "BCS-5E",
                 "courseID": "SS2007",
                 "venue": "CS-3",
+                "courseName": "Technical and Business Writing",
                 "dept": "CS",
-                "courseName": "Technical and Business Writing"
+                "instID": "4"
             }
         ],
         [],
@@ -125,8 +152,9 @@
                 "name": "BCS-5E",
                 "courseID": "CS3004",
                 "venue": "CS-15",
+                "courseName": "Software Design and Analysis",
                 "dept": "CS",
-                "courseName": "Software Design andAnalysis"
+                "instID": "2"
             }
         ],
         [],

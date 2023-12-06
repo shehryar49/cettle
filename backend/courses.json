@@ -26,11 +26,6 @@
             "name": "Database Systems"
         },
         {
-            "id": "CS2006",
-            "department": "CS",
-            "name": "Operating Systems"
-        },
-        {
             "id": "CS2009",
             "department": "CS",
             "name": "Design and Analysis of Algorithms"

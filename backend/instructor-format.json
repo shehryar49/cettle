@@ -1,5 +1,6 @@
 {
     "id": "tahirboi",
     "name": "Tahir Ejaz",
-    "dept": "CS"
+    "dept": "CS",
+    "slots": [1,3]
 }

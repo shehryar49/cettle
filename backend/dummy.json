@@ -26,11 +26,21 @@
             {
                 "venue": "CS-15",
                 "slot": "3",
-                "courseName": "Software Design andAnalysis"
+                "courseName": "Software Design and Analysis"
             },
             {
                 "venue": "Lab(CS-4)",
                 "slot": "5",
+                "courseName": "Computer Networks Lab"
+            },
+            {
+                "venue": "Lab(CS-4)",
+                "slot": "5",
+                "courseName": "Computer Networks Lab"
+            },
+            {
+                "venue": "Lab(CS-4)",
+                "slot": "6",
                 "courseName": "Computer Networks Lab"
             },
             {
@@ -65,9 +75,9 @@
             {
                 "venue": "CS-15",
                 "slot": "3",
-                "courseName": "Software Design andAnalysis"
+                "courseName": "Software Design and Analysis"
             }
         ],
-        "maxCourses": 4
+        "maxCourses": 6
     }
 }

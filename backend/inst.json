@@ -3,7 +3,11 @@
         {
             "id": "1",
             "name": "Dr. Arshad Ali",
-            "dept": "CS"
+            "dept": "CS",
+            "slots": [
+                "1",
+                "4"
+            ]
         },
         {
             "id": "2",
@@ -33,7 +37,20 @@
         {
             "id": "7",
             "name": "Iqra Yaqoot",
-            "dept": "CS"
+            "dept": "CS",
+            "slots": [
+                "1",
+                "8"
+            ]
+        },
+        {
+            "id": "69",
+            "name": "Tahir",
+            "dept": "CS",
+            "slots": [
+                "1",
+                "8"
+            ]
         }
     ]
 }
