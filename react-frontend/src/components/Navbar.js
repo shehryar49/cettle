@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -30,44 +31,44 @@ export default function Navbar({ fixed }) {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
-                <a
+                <Link
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  href="#pablo" to="/"
                 >
                  <span className="ml-2">Timetable</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  href="#pablo" to="/courses"
                 >
                  <span className="ml-2">Courses</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  href="#pablo" to="/teachers"
                 >
                  <span className="ml-2">Teachers</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link to="/sections"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="#pablo"
                 >
                  <span className="ml-2">Sections</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link to="/venues"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="#pablo"
                 >
-                  <span className="ml-2">Venues</span>
-                </a>
+                    <span className="ml-2">Venues</span>
+                </Link>
               </li>
             </ul>
           </div>
