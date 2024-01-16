@@ -1,0 +1,6 @@
+function configRoutes(var app)
+{
+  app.route("GET","/courses",listCourses)
+  
+  
+}

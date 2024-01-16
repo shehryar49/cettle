@@ -1,0 +1,9 @@
+import nuke
+import json
+import "cettle.zk"
+import "routes.zk"
+
+var app = nuke.app()
+configRoutes(app)
+
+app.run("127.0.0.1:8080",10)
